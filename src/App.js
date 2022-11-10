@@ -6,7 +6,9 @@ const App = (props) => {
       <h1>Solera Teams</h1>
       <div>
           <div>Groups Component</div>
-          <Group name="Group 1" points="15" assignment="2"/>
+          <button onClick={() => {console.log("Clicked!")}}>
+            <Group name="Group 1" points="15" assignment="2"/>
+          </button>
       </div>
   </div>
 }
