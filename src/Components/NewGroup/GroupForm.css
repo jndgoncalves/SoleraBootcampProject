@@ -1,0 +1,13 @@
+#textDiv input[type="number"],
+#textDiv input[type="text"]  {
+    margin-right: 20px;
+    margin-left: 5px;
+    border-radius: 20px;
+    
+}
+
+#textDiv {
+    font-size: 20pt;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-style:bold;
+}
