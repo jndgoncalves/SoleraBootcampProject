@@ -6,3 +6,5 @@ const newGroup = () => {
     <GroupForm></GroupForm>
     </div>
 }
+
+export default newGroup;
