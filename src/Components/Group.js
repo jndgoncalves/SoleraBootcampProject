@@ -7,9 +7,9 @@ const Group = (props) => {
     const assignmentCompleted = props.assignment
 
     return <div>
-            <div>Group Name: {groupName}</div>
+            <div>{groupName}</div>
             <div>Group Points: {points}</div>
-            <div>Assignments completed by the group: {assignmentCompleted}</div>
+            <div>Assignments completed: {assignmentCompleted}</div>
         </div>
 }
 
