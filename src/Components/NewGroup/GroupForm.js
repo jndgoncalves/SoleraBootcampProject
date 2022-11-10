@@ -2,15 +2,15 @@
 
 const groupForm = () => {
     return <form>
-        <div>
-            <label>Title</label>
+         <div>
+            <label>Group name:</label>  
             <input type="text"></input>
+            <label>Points:</label>
+            <input type="number"></input>
+            <label>Assignments:</label>
+            <input type="number"></input>
         </div>
-        <div>
-            <label>Date</label>
-            <input type="date"></input>
-        </div>
-        <div>
+        <div >
             <button type="submit">Add Group</button>
         </div>
         <div>

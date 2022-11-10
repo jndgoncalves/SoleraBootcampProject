@@ -1,4 +1,4 @@
-import './Group.css'
+import "./Group.css";
 
 const Group = (props) => {
 
@@ -7,9 +7,9 @@ const Group = (props) => {
     const assignmentCompleted = props.assignment
 
     return <div>
-            <div>{groupName}</div>
-            <div>Group Points: {points}</div>
-            <div>Assignments completed: {assignmentCompleted}</div>
+            <div id="name" name="name" >{groupName}</div>
+            <div id="points" name="points" >{points}</div>
+            <div id="assignments" name="assignments" >{assignmentCompleted}/total</div>
         </div>
 }
 
