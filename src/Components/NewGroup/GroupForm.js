@@ -1,5 +1,3 @@
-
-
 const groupForm = () => {
     return <form>
          <div>
