@@ -1,5 +1,4 @@
 
-
 const groupForm = () => {
     return <form>
         <div>
@@ -12,9 +11,6 @@ const groupForm = () => {
         </div>
         <div>
             <button type="submit">Add Group</button>
-        </div>
-        <div>
-            <button>Add Points</button>
         </div>
     </form>
 }
