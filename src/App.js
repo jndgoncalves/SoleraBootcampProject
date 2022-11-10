@@ -1,4 +1,4 @@
-import Group from "./Components/Group";
+import Group from "./Components/Group/Group";
 import "./App.css";
 
 const App = (props) => {
@@ -7,20 +7,9 @@ const App = (props) => {
     console.log("click done!")
   }
 
-  
-  const submitHandler = (event) => {
-    
-    const groupData = {
-      name : enteredName,
-      points : 0,
-      assignment : 0
-    }
-  }
-
-  return <div className="app">
+  return <div className="App">
       <h1>Solera Teams</h1>
-      <div>
-          <div>Groups Component</div>
+      <div className="BigDiv">
           <button onClick={clickHandler}>
             <Group name="Group 1" points="15" assignment="2"/>
           </button>
