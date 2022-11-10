@@ -1,25 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import Group from "./Components/Group";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = (props) => {
+
+  return <div className="app">
+      <h1>Solera Teams</h1>
+      <div>
+          <div>Groups Component</div>
+          <Group name="Group 1" points="15" assignment="2"/>
+      </div>
+  </div>
 }
 
 export default App;
