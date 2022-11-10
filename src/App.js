@@ -1,4 +1,5 @@
 import Group from "./Components/Group";
+import "./App.css";
 
 const App = (props) => {
   
@@ -6,8 +7,16 @@ const App = (props) => {
     console.log("click done!")
   }
 
-  return <div className="app">
+  const submitHandler = (event) => {
+    
+    const groupData = {
+      name : enteredName,
+      points : 0,
+      assignment : 0
+    }
+  }
 
+  return <div className="app">
       <h1>Solera Teams</h1>
       <div>
           <div>Groups Component</div>
