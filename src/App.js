@@ -3,19 +3,26 @@ import GroupCard from "./Components/Group/GroupCard";
 import "./App.css";
 import NewGroup from "./Components/NewGroup/NewGroup.js";
 import AddPoints from "./Components/AddPoints/AddPoints";
+import solera from "./solera.svg";
+
 
 
 const App = (props) => {
 
+  const newGroupShowing = "hidden";
+  const clickAddGroupHandler = () => {
+    newGroupShowing = "";
+  }
   const clickHandler = () => {
-    console.log("click done!")
+    
   }
 
   return <div className="App" id="App">
       <h1>Solera Teams Scores</h1>
+      <img src={solera} alt="solera logo" id="solera" height="240" width="300"></img>
       <div id="sideButtons">
-        <button onClick={clickHandler} id="addGroup" name="Add Group"> Group </button><p></p>
-        <button onClick={clickHandler} id="addAssignment" name="Add Assignment"> Assignment </button><p></p>
+        <button onClick={clickAddGroupHandler} id="addGroup" name="Add Group"> Group </button>
+        <button onClick={clickHandler} id="addAssignment" name="Add Assignment"> Assignment </button>
         <button onClick={clickHandler} id="addAssignment" name="Add Extra Points"> Points </button>
       </div>
       <div className="BigDiv" id="BigDiv">
