@@ -3,7 +3,6 @@ import GroupCard from "./Components/Group/GroupCard";
 import "./App.css";
 import NewGroup from "./Components/NewGroup/NewGroup.js";
 import AddPoints from "./Components/AddPoints/AddPoints";
-import GroupForm from "./Components/NewGroup/GroupForm.js";
 
 
 const App = (props) => {
