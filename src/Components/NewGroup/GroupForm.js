@@ -1,11 +1,13 @@
 import "./GroupForm.css";
 import React, {useState} from 'react'
+import App from "./../../App.js"
+
 
 const GroupForm = () => {
     const [enteredName, setEnteredName] =useState("");
     const [enteredPoints, setEnteredPoints] =useState("");
     const [enteredAssignment, setEnteredAssignment] =useState("");
-
+    const newGroupShowing = App.newGroupShowing;
     const nameChangeHandler = (event) => {
         setEnteredName(event.target.value);
     }
@@ -28,10 +30,11 @@ const GroupForm = () => {
         setEnteredName('');
         setEnteredPoints('');
         setEnteredAssignment('');
+        newGroupShowing="hidden";
     }
 
     return <form onSubmit={submitHandler}>
-         <div id="textDiv">
+         <div id="textDiv" hidden={newGroupShowing}>
             <label value={enteredName} onChange={nameChangeHandler}>Group name:</label>  
             <input type="text" min="1" required="0"></input>
             <label value={enteredPoints} onChange={pointsChangeHandler}>Points:</label>
@@ -42,7 +45,7 @@ const GroupForm = () => {
         <div>
             <button type="submit">Add Group</button>
         </div>
-    </form>
+            </form>
 }
 
 export default GroupForm;
