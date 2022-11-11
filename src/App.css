@@ -7,9 +7,9 @@ h1{
   font-size: 30pt;
   font-style: bold;
   margin-bottom: 30px;
-  text-align: center;
-  margin: 50px auto;
+  text-align:center;
   height: 70px;
+  margin: 50px auto;
   width: 1500px;
   border-bottom: 2px solid black;
   }
@@ -19,6 +19,13 @@ text-align: center;
 margin: 50px auto;
 
   }
+  #BigDiv button{
+    text-align: center;
+    margin-right: 20px;
+    width: 200px;
+    height: 200px;
+    padding: 10px;
+      }
 
   #BigDiv GroupCard{
     padding: 15px ;
@@ -40,21 +47,28 @@ div {
 
   #sideButtons{
     position:absolute;
-    width: 200px;
-    height: 200px;
-    top: 150px;
-    
-  }
+    width: 500px;
+    height: 50px;
+    top: 45px;
+    right:-20px;
+    }
 
   #addGroup, 
   #addAssignment,
   #addPoints{
     border-radius: 20px;
-    font-size: 20pt;
-    height: 50px;
-    width: 160px;
+    font-size: 16pt;
+    height: 30px;
+    width: 140px;
     background-color: rgb(125, 129, 129);
     color:aliceblue;
+    margin-right: 5px;
     
+  }
+
+  #solera{
+    position: absolute;
+    top:-40px;
+    left: 100px;
   }
 
