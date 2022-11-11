@@ -1,17 +1,45 @@
 import "./GroupForm.css";
+import React, {useState} from 'react'
 
-const groupForm = () => {
-    return <form>
-         <div id="textDiv" hidden="">
-            <label>Group name:</label>  
+const GroupForm = () => {
+    const [enteredName, setEnteredName] =useState("");
+    const [enteredPoints, setEnteredPoints] =useState("");
+    const [enteredAssignment, setEnteredAssignment] =useState("");
+
+    const nameChangeHandler = (event) => {
+        setEnteredName(event.target.value);
+    }
+    const pointsChangeHandler = (event) => {
+        setEnteredName(event.target.value);
+    }
+    const assignmentChangeHandler = (event) => {
+        setEnteredName(event.target.value);
+    }
+
+    const submitHandler = (event) =>{
+        event.preventDefault();
+
+        const groupData = {
+            name: enteredName,
+            points: enteredPoints,
+            assignment: enteredAssignment
+        }
+        console.log(groupData);
+    }
+
+    return <form onSubmit={submitHandler}>
+         <div id="textDiv">
+            <label value={enteredName} onChange={nameChangeHandler}>Group name:</label>  
             <input type="text" min="1" required="0"></input>
-            <label>Points:</label>
+            <label value={enteredPoints} onChange={pointsChangeHandler}>Points:</label>
             <input type="number" min="0" id="point" required="0"></input>
-            <label>Assignments:</label>
+            <label value={enteredAssignment} onChange={assignmentChangeHandler}>Assignments:</label>
             <input type="number" min="0" id="assignments" required="0"></input>
+        </div>
+        <div >
             <button type="submit">Add Group</button>
         </div>
-       </form>
+    </form>
 }
 
-export default groupForm;
+export default GroupForm;
