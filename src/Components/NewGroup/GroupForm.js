@@ -10,14 +10,14 @@ const GroupForm = () => {
         setEnteredName(event.target.value);
     }
     const pointsChangeHandler = (event) => {
-        setEnteredName(event.target.value);
+        setEnteredPoints(event.target.value);
     }
     const assignmentChangeHandler = (event) => {
-        setEnteredName(event.target.value);
+        setEnteredAssignment(event.target.value);
     }
 
     const submitHandler = (event) =>{
-        event.preventDefault();
+        //event.preventDefault();
 
         const groupData = {
             name: enteredName,
@@ -25,6 +25,9 @@ const GroupForm = () => {
             assignment: enteredAssignment
         }
         console.log(groupData);
+        setEnteredName('');
+        setEnteredPoints('');
+        setEnteredAssignment('');
     }
 
     return <form onSubmit={submitHandler}>
@@ -36,7 +39,7 @@ const GroupForm = () => {
             <label value={enteredAssignment} onChange={assignmentChangeHandler}>Assignments:</label>
             <input type="number" min="0" id="assignments" required="0"></input>
         </div>
-        <div >
+        <div>
             <button type="submit">Add Group</button>
         </div>
     </form>
