@@ -20,7 +20,7 @@ margin: 50px auto;
 
   }
 
-  #BigDiv button{
+  #BigDiv GroupCard{
     padding: 15px ;
     border-radius: 20px;
     margin-right: 10px;
@@ -34,14 +34,27 @@ div {
     margin: 25px auto;
     }
 
-/*button {
-    text-align: center;
-    height: 200px;
-    width: 200px;
-    padding: 20px;
-  }*/
-
-
   #App{
     background-color: rgb(167, 172, 172);
   }
+
+  #sideButtons{
+    position:absolute;
+    width: 200px;
+    height: 200px;
+    top: 150px;
+    
+  }
+
+  #addGroup, 
+  #addAssignment,
+  #addPoints{
+    border-radius: 20px;
+    font-size: 20pt;
+    height: 50px;
+    width: 160px;
+    background-color: rgb(125, 129, 129);
+    color:aliceblue;
+    
+  }
+
