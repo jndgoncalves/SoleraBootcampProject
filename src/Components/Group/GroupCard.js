@@ -1,6 +1,7 @@
 import Group from "./Group"
 function GroupCard(props) {
 
+    /* Some button handler to display group info */
     function showGroupInfo(name, points, assignment) {
         return <div>
             <h1>{name}</h1>

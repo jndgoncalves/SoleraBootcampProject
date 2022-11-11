@@ -19,27 +19,12 @@ const App = (props) => {
         <button onClick={clickHandler} id="addAssignment" name="Add Extra Points"> Points </button>
       </div>
       <div className="BigDiv" id="BigDiv">
-          <button onClick={clickHandler} >
-            <Group name="Group 1" points="15" assignment="2"/>
-          </button>
-          <button onClick={clickHandler}>
-            <Group name="Group 2" points="20" assignment="3"/>
-          </button>
-          <button onClick={clickHandler}>
-            <Group name="Group 3" points="150" assignment="7"/>
-          </button>
-          <button onClick={clickHandler}>
-            <Group name="Group 3" points="150" assignment="7"/>
-          </button>
-          <button onClick={clickHandler}>
-            <Group name="Group 3" points="150" assignment="7"/>
-          </button>
-      </div>
-      <NewGroup />
-      <AddPoints />
-      <div className="BigDiv">
-          <GroupCard name="Group 1" points="100" assignment="2"></GroupCard>
-          <GroupCard name="Group 2" points="100" assignment="2"></GroupCard>
+        <GroupCard name="Group 1" points="100" assignment="2"></GroupCard>
+        <GroupCard name="Group 2" points="100" assignment="2"></GroupCard>
+        <GroupCard name="Group 3" points="100" assignment="2"></GroupCard>
+        <GroupCard name="Group 4" points="100" assignment="2"></GroupCard>
+        <NewGroup />
+        <AddPoints />
       </div>
   </div>
 }
