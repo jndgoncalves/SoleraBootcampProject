@@ -1,7 +1,7 @@
 import Group from "./Components/Group/Group";
 import "./App.css";
 import NewGroup from "./Components/NewGroup/NewGroup.js";
-import AddPoints from "./Components/AddPoints/addpoints";
+import AddPoints from "./Components/AddPoints/AddPoints";
 
 
 const App = (props) => {
