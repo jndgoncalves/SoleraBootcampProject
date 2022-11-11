@@ -46,16 +46,16 @@ export default function App(){
       {(() => {
         if (idNumber==1) {
           return (
-            <div><GroupDetails names="Group 1" pointss="15" tasks={task1} tasksScores = {tasksScore1} /></div>
+            <div><GroupDetails names="Group 1" pointss="95" tasks={task1} tasksScores = {tasksScore1} /></div>
           )
         }  if (idNumber==2) {
           return (
-            <div><GroupDetails names="Group 2" pointss="25" tasks={task2} tasksScores = {tasksScore2} /></div>
+            <div><GroupDetails names="Group 2" pointss="125" tasks={task2} tasksScores = {tasksScore2} /></div>
           )
         }
         if (idNumber==3) {
           return (
-            <div><GroupDetails names="Group 3" pointss="5" tasks={task3} tasksScores = {tasksScore3} /></div>
+            <div><GroupDetails names="Group 3" pointss="59" tasks={task3} tasksScores = {tasksScore3} /></div>
           )
         }
         
