@@ -1,7 +1,7 @@
 import Group from "./Group"
-function GroupCard(props) {
+const GroupCard = (props) => {
 
-    function showGroupInfo(name, points, assignment) {
+    const showGroupInfo = (name, points, assignment) => {
         return <div>
             <h1>{name}</h1>
             <h2>{points}</h2>
@@ -12,7 +12,7 @@ function GroupCard(props) {
     }
 
     return(
-        <button onClick={showGroupInfo(props.name, props.points, props.assignment)}>
+        <button onClick={showGroupInfo}>
             <Group name={props.name} points={props.points} assignment={props.assignment}/>
         </button>
     )
