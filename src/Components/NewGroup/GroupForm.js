@@ -3,14 +3,13 @@ import React, { useState } from 'react'
 import App from "./../../App.js"
 
 
-const GroupForm = () => {
+const GroupForm = (props) => {
     const [enteredName, setEnteredName] = useState("");
     const [enteredPoints, setEnteredPoints] = useState("");
     const [enteredAssignment, setEnteredAssignment] = useState("");
     const newGroupShowing = App.newGroupShowing;
 
     const nameChangeHandler = (event) => {
-        console.log(event.target.value);
         setEnteredName(event.target.value);
     }
     const pointsChangeHandler = (event) => {
@@ -28,7 +27,7 @@ const GroupForm = () => {
             points: enteredPoints,
             assignment: enteredAssignment
         }
-        console.log(groupData);
+        props.onSaveGroupData(groupData);
         setEnteredName('');
         setEnteredPoints('');
         setEnteredAssignment('');

@@ -33,6 +33,10 @@ const App = (props) => {
     idNumber=event.currentTarget.id;
   };
 
+  const addGroupHandler = (group) => {
+    console.log(group)
+  }
+
   return <div className="App" id="App">
     <Header />
         <div className="BigDiv" id="BigDiv">
@@ -42,7 +46,7 @@ const App = (props) => {
         <button onClick={handleClick} id="4"><GroupCard name="Group 4" points="100" assignment="2"></GroupCard></button>
         </div>
       <div className="ResultsDiv" id="Results">
-      <NewGroup />
+      <NewGroup onAddGroup={addGroupHandler}/>
       <AddPoints />
 {isShown && (
   <div className="ResultsDiv" id="Details">
