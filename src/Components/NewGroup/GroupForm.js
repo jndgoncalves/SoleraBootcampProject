@@ -41,11 +41,9 @@ const GroupForm = () => {
             <input type="number" min="0" id="point" required="0"></input>
             <label value={enteredAssignment} onChange={assignmentChangeHandler}>Assignments:</label>
             <input type="number" min="0" id="assignments" required="0"></input>
-        </div>
-        <div>
             <button type="submit">Add Group</button>
         </div>
-            </form>
+      </form>
 }
 
 export default GroupForm;

@@ -18,20 +18,31 @@ const App = (props) => {
   }
 
   return <div className="App" id="App">
-      <h1>Solera Teams Scores</h1>
-      <img src={solera} alt="solera logo" id="solera" height="240" width="300"></img>
-      <div id="sideButtons">
-        <button onClick={clickAddGroupHandler} id="addGroup" name="Add Group"> Group </button>
-        <button onClick={clickHandler} id="addAssignment" name="Add Assignment"> Assignment </button>
-        <button onClick={clickHandler} id="addAssignment" name="Add Extra Points"> Points </button>
+      <div className="headerDiv">
+        <div className="solera"><img src={solera} alt="solera logo" height="250" width="500" className="soleraImg"></img></div>
+        <h1>Solera Teams Scores</h1>
+        <div className="sideButtonsDiv">
+        <button onClick={clickAddGroupHandler} id="addGroup" className="sideButtons"> Group </button>
+        <button onClick={clickHandler} id="addAssignment" className="sideButtons"> Assignment </button>
+        <button onClick={clickHandler} id="addAssignment" className="sideButtons"> Points </button>
+        </div>
       </div>
+      
       <div className="BigDiv" id="BigDiv">
         <GroupCard name="Group 1" points="100" assignment="2"></GroupCard>
         <GroupCard name="Group 2" points="100" assignment="2"></GroupCard>
         <GroupCard name="Group 3" points="100" assignment="2"></GroupCard>
         <GroupCard name="Group 4" points="100" assignment="2"></GroupCard>
-        <NewGroup />
-        <AddPoints />
+        <GroupCard name="Group 4" points="100" assignment="2"></GroupCard>
+        <GroupCard name="Group 4" points="100" assignment="2"></GroupCard>
+        <GroupCard name="Group 4" points="100" assignment="2"></GroupCard>
+        <GroupCard name="Group 4" points="100" assignment="2"></GroupCard>
+        <GroupCard name="Group 4" points="100" assignment="2"></GroupCard>
+        <GroupCard name="Group 4" points="100" assignment="2"></GroupCard>
+      </div>
+      <div className="ResultsDiv" id="Results">
+      <NewGroup />
+      <AddPoints />
       </div>
   </div>
 }
