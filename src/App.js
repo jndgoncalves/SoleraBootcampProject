@@ -32,26 +32,27 @@ const App = (props) => {
   };
 
   return <div className="App" id="App">
-      <h1>Solera Teams Scores</h1>
-      <img src={solera} alt="solera logo" id="solera" height="240" width="300"></img>
-      <div id="sideButtons">
-        <button onClick={clickAddGroupHandler} id="addGroup" name="Add Group"> Group </button>
-        <button onClick={clickHandler} id="addAssignment" name="Add Assignment"> Assignment </button>
-        <button onClick={clickHandler} id="addAssignment" name="Add Extra Points"> Points </button>
-      </div>
+  <div className="headerDiv">
+    <div className="solera"><img src={solera} alt="solera logo" height="250" width="500" className="soleraImg"></img></div>
+    <h1>Solera Teams Scores</h1>
+    <div className="sideButtonsDiv">
+    <button onClick={clickAddGroupHandler} id="addGroup" className="sideButtons"> Group </button>
+    <button onClick={clickHandler} id="addAssignment" className="sideButtons"> Assignment </button>
+    <button onClick={clickHandler} id="addAssignment" className="sideButtons"> Points </button>
+    </div>
+  </div>
       <div className="BigDiv" id="BigDiv">
       <button onClick={handleClick} id="1"><GroupCard name="Group 1" points="100" assignment="2"></GroupCard></button>
         <button onClick={handleClick} id="2"><GroupCard name="Group 2" points="100" assignment="2"></GroupCard></button>
         <button onClick={handleClick} id="3"><GroupCard name="Group 3" points="100" assignment="2"></GroupCard></button>
         <button onClick={handleClick} id="4"><GroupCard name="Group 4" points="100" assignment="2"></GroupCard></button>
-      
-        <NewGroup />
-        <AddPoints />
       </div>
+      <div className="ResultsDiv" id="Results">
+      <NewGroup />
+      <AddPoints />
 {isShown && (
-  <div>
-    <div>Groups Details</div>
-      {(() => {
+  <div className="ResultsDiv" id="Details">
+          {(() => {
         {console.log(idNumber)}
         if (idNumber==="1") {
           return (
@@ -76,6 +77,8 @@ const App = (props) => {
   </div>
 )}
   </div>
+
+</div>
 }
 
 export default App;
