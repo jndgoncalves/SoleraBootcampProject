@@ -12,18 +12,6 @@ body{
   
   }
 
-h1{
-  color:aliceblue;
-  font-size: 30pt;
-  font-style: bold;
-  margin-bottom: 30px;
-  text-align:center;
-  height: 70px;
-  margin: 50px auto;
-  width: 1500px;
-  border-bottom: 2px solid black;
-  }
-
 .headerDiv h1{
     color:aliceblue;
     font-size: 24pt;
