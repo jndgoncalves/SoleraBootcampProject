@@ -31,6 +31,10 @@ const App = (props) => {
     idNumber=event.currentTarget.id;
   };
 
+  const addGroupHandler = (group) => {
+    console.log(group)
+  }
+
   return <div className="App" id="App">
       <h1>Solera Teams Scores</h1>
       <img src={solera} alt="solera logo" id="solera" height="240" width="300"></img>
@@ -45,7 +49,7 @@ const App = (props) => {
       <button onClick={handleClick} id="3"><GroupCard name="Group 3" points="100" assignment="2"></GroupCard></button>
       <button onClick={handleClick} id="4"><GroupCard name="Group 4" points="100" assignment="2"></GroupCard></button>
       
-        <NewGroup />
+        <NewGroup onAddGroup={addGroupHandler}/>
         <AddPoints />
       </div>
 {isShown && (
