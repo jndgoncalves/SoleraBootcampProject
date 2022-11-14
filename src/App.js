@@ -3,9 +3,11 @@ import GroupCard from "./Components/Group/GroupCard";
 import "./App.css";
 import NewGroup from "./Components/NewGroup/NewGroup.js";
 import AddPoints from "./Components/AddPoints/AddPoints";
-import solera from "./solera.svg";
 import GroupDetails from "./Components/GroupDetails/GroupDetails";
 import {useState} from 'react';
+import Header from "./Components/Header/Header";
+
+
 const task1 = ["HTML", "React", "JS", "c++"];
 const tasksScore1 = [11, 22, 33, 41];
 const task2 = ["HTML", "React", "JS", "c++"];
@@ -32,21 +34,13 @@ const App = (props) => {
   };
 
   return <div className="App" id="App">
-  <div className="headerDiv">
-    <div className="solera"><img src={solera} alt="solera logo" height="250" width="500" className="soleraImg"></img></div>
-    <h1>Solera Teams Scores</h1>
-    <div className="sideButtonsDiv">
-    <button onClick={clickAddGroupHandler} id="addGroup" className="sideButtons"> Group </button>
-    <button onClick={clickHandler} id="addAssignment" className="sideButtons"> Assignment </button>
-    <button onClick={clickHandler} id="addAssignment" className="sideButtons"> Points </button>
-    </div>
-  </div>
-      <div className="BigDiv" id="BigDiv">
-      <button onClick={handleClick} id="1"><GroupCard name="Group 1" points="100" assignment="2"></GroupCard></button>
+    <Header />
+        <div className="BigDiv" id="BigDiv">
+       <button onClick={handleClick} id="1"><GroupCard name="Group 1" points="100" assignment="2"></GroupCard></button>
         <button onClick={handleClick} id="2"><GroupCard name="Group 2" points="100" assignment="2"></GroupCard></button>
         <button onClick={handleClick} id="3"><GroupCard name="Group 3" points="100" assignment="2"></GroupCard></button>
         <button onClick={handleClick} id="4"><GroupCard name="Group 4" points="100" assignment="2"></GroupCard></button>
-      </div>
+        </div>
       <div className="ResultsDiv" id="Results">
       <NewGroup />
       <AddPoints />
