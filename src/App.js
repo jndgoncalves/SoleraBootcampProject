@@ -17,7 +17,6 @@ const tasksScore4 = [33, 66, 32, 21];
 let idNumber
 
 const App = (props) => {
-
   const newGroupShowing = "hidden";
   const clickAddGroupHandler = () => {
     newGroupShowing = "";
@@ -27,15 +26,9 @@ const App = (props) => {
   }
 
   const [isShown, setIsShown] = useState(false);
-
   const handleClick = event => {
-    // 👇️ toggle shown state
     setIsShown(current => !current);
     idNumber=event.currentTarget.id;
-    // console.log(idNumber);
-
-    // 👇️ or simply set it to true
-    // setIsShown(true);
   };
 
   return <div className="App" id="App">
@@ -55,30 +48,26 @@ const App = (props) => {
         <NewGroup />
         <AddPoints />
       </div>
-      {/* 👇️ show elements on click */}
 {isShown && (
   <div>
     <div>Groups Details</div>
-   
-  
-      
       {(() => {
         {console.log(idNumber)}
-        if (idNumber=="1") {
+        if (idNumber==="1") {
           return (
             <div><GroupDetails names="Group 1" pointss="95" tasks={task1} tasksScores = {tasksScore1} /></div>
           )
-        }  if (idNumber==2) {
+        }  if (idNumber==="2") {
           return (
             <div><GroupDetails names="Group 2" pointss="125" tasks={task2} tasksScores = {tasksScore2} /></div>
           )
         }
-        if (idNumber==3) {
+        if (idNumber==="3") {
           return (
             <div><GroupDetails names="Group 3" pointss="59" tasks={task3} tasksScores = {tasksScore3} /></div>
           )
         }
-        if (idNumber==4) {
+        if (idNumber==="4") {
           return (
             <div><GroupDetails names="Group 4" pointss="68" tasks={task4} tasksScores = {tasksScore4} /></div>
           )
@@ -86,17 +75,8 @@ const App = (props) => {
       })()}
   </div>
 )}
-
-{/* 👇️ show component on click */}
-{isShown && <Box />}
   </div>
 }
-function Box() {
-  return (
-    <div>
-      
-    </div>
-  );
-}
+
 export default App;
 
