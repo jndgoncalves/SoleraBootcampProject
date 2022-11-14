@@ -7,7 +7,6 @@ const GroupForm = (props) => {
     const [enteredName, setEnteredName] = useState("");
     const [enteredPoints, setEnteredPoints] = useState("");
     const [enteredAssignment, setEnteredAssignment] = useState("");
-    const newGroupShowing = App.newGroupShowing;
 
     const nameChangeHandler = (event) => {
         setEnteredName(event.target.value);
@@ -31,11 +30,10 @@ const GroupForm = (props) => {
         setEnteredName('');
         setEnteredPoints('');
         setEnteredAssignment('');
-        newGroupShowing = "hidden";
     }
 
     return <form onSubmit={submitHandler}>
-        <div id="textDiv" hidden={newGroupShowing}>
+        <div id="textDiv">
             <label>Group name:</label>
             <input type="text" min="1" required="0" onChange={nameChangeHandler} value={enteredName}></input>
             <label>Points:</label>

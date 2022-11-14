@@ -19,10 +19,6 @@ const tasksScore4 = [33, 66, 32, 21];
 let idNumber
 
 const App = (props) => {
-  const newGroupShowing = "hidden";
-  const clickAddGroupHandler = () => {
-    newGroupShowing = "";
-  }
   const clickHandler = () => {
     
   }
