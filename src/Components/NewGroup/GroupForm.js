@@ -1,14 +1,16 @@
 import "./GroupForm.css";
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import App from "./../../App.js"
 
 
 const GroupForm = () => {
-    const [enteredName, setEnteredName] =useState("");
-    const [enteredPoints, setEnteredPoints] =useState("");
-    const [enteredAssignment, setEnteredAssignment] =useState("");
+    const [enteredName, setEnteredName] = useState("");
+    const [enteredPoints, setEnteredPoints] = useState("");
+    const [enteredAssignment, setEnteredAssignment] = useState("");
     const newGroupShowing = App.newGroupShowing;
+
     const nameChangeHandler = (event) => {
+        console.log(event.target.value);
         setEnteredName(event.target.value);
     }
     const pointsChangeHandler = (event) => {
@@ -18,8 +20,8 @@ const GroupForm = () => {
         setEnteredAssignment(event.target.value);
     }
 
-    const submitHandler = (event) =>{
-        //event.preventDefault();
+    const submitHandler = (event) => {
+        event.preventDefault();
 
         const groupData = {
             name: enteredName,
@@ -30,20 +32,20 @@ const GroupForm = () => {
         setEnteredName('');
         setEnteredPoints('');
         setEnteredAssignment('');
-        newGroupShowing="hidden";
+        newGroupShowing = "hidden";
     }
 
     return <form onSubmit={submitHandler}>
-         <div id="textDiv" hidden={newGroupShowing}>
-            <label value={enteredName} onChange={nameChangeHandler}>Group name:</label>  
-            <input type="text" min="1" required="0"></input>
-            <label value={enteredPoints} onChange={pointsChangeHandler}>Points:</label>
-            <input type="number" min="0" id="point" required="0"></input>
-            <label value={enteredAssignment} onChange={assignmentChangeHandler}>Assignments:</label>
-            <input type="number" min="0" id="assignments" required="0"></input>
+        <div id="textDiv" hidden={newGroupShowing}>
+            <label>Group name:</label>
+            <input type="text" min="1" required="0" onChange={nameChangeHandler} value={enteredName}></input>
+            <label>Points:</label>
+            <input type="number" min="0" id="point" required="0" onChange={pointsChangeHandler} value={enteredPoints}></input>
+            <label>Assignments:</label>
+            <input type="number" min="0" id="assignments" required="0" onChange={assignmentChangeHandler} value={enteredAssignment}></input>
             <button type="submit">Add Group</button>
         </div>
-      </form>
+    </form>
 }
 
 export default GroupForm;

@@ -16,7 +16,6 @@ const GroupCard = (props) => {
 
     return(
             <Group name={props.name} points={props.points} assignment={props.assignment}/>
-       
     )
 }
 export default GroupCard
