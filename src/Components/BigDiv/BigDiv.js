@@ -5,7 +5,8 @@ import NewGroup from '../NewGroup/NewGroup.js';
 import AddPoints from '../AddPoints/AddPoints.js';
 import GroupDetails from '../GroupDetails/GroupDetails';
 import Group from '../Group/Group';
-import '../../App.css';
+import './BigDiv.css';
+
 
 
 const task1 = ["HTML", "React", "JS", "c++"];
@@ -18,7 +19,7 @@ const task4 = ["HTML", "React", "JS", "c++"];
 const tasksScore4 = [33, 66, 32, 21];
 let idNumber
 
-export default function BigDiv() {
+export default function BigDiv(props) {
 
   const clickHandler = () => {
 
@@ -34,6 +35,10 @@ export default function BigDiv() {
     console.log(group)
   }
 
+  const managementPressed = event =>{
+
+  }
+
   const grupo =[
     {name: 'Group 1', points: '100', assignment:'5'},
     {name: 'Group 2', points: '150', assignment:'8'},
@@ -42,10 +47,7 @@ export default function BigDiv() {
 
   return (
     <>
-      <div className="App" id="App">
-        <Header />
-        <div className="BigDiv" id="BigDiv">
-      
+      <div className="BigDiv" id="BigDiv">      
       <button onClick={handleClick} id="1"><Group name={grupo[0].name} points={grupo[0].points} assignment={grupo[0].assignment}></Group></button>
       <button onClick={handleClick} id="2"><Group name={grupo[1].name} points={grupo[1].points} assignment={grupo[1].assignment}></Group></button>
       <button onClick={handleClick} id="3"><Group name={grupo[2].name} points={grupo[2].points} assignment={grupo[2].assignment}></Group></button>
@@ -53,9 +55,10 @@ export default function BigDiv() {
     
       </div> 
 
-        <div className="ResultsDiv" id="Results">
+      <div className="ResultsDiv" style={{visibility:'visible'}} >
           <NewGroup onAddGroup={addGroupHandler} />
           <AddPoints />
+      
           {isShown && (
             <div className="ResultsDiv" id="Details">
               {(() => {
@@ -83,7 +86,6 @@ export default function BigDiv() {
             </div>
           )}
         </div>
-      </div>
     </>
   )
 }

@@ -36,12 +36,12 @@ const GroupForm = (props) => {
         <div id="textDiv">
             <label>Group name:</label>
             <input type="text" min="1" required="0" onChange={nameChangeHandler} value={enteredName}></input>
-            <label>Points:</label>
+            {/* <label>Points:</label>
             <input type="number" min="0" id="point" required="0" onChange={pointsChangeHandler} value={enteredPoints}></input>
             <label>Assignments:</label>
-            <input type="number" min="0" id="assignments" required="0" onChange={assignmentChangeHandler} value={enteredAssignment}></input>
+            <input type="number" min="0" id="assignments" required="0" onChange={assignmentChangeHandler} value={enteredAssignment}></input> */}
             <button type="submit">Add Group</button>
-        </div>
+        </div> 
     </form>
 }
 
