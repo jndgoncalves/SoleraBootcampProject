@@ -8,19 +8,18 @@ const GroupDetails = (props) => {
     const tasksScores = props.tasksScores
  
     const listItems = tasks.map((task) =>  
-    <div><li>{task}</li>
-    </div>
-  );
+    <div>
+      <li>{task}</li>
+    </div>);
   
   const listItems2 = tasksScores.map((score) =>
-    <div><li>{score}</li></div>
-  
-);
+    <div>
+      <li>{score}</li>
+    </div>);
 
 
     return <div>
             <div>
-            <h1>Solera Teams</h1>
             <span>{groupName} </span>
             <span>{points} Points</span>
             </div>
