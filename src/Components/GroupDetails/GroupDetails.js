@@ -2,17 +2,17 @@ import "./GroupDetails.css";
 
 const GroupDetails = (props) => {
 
-    const groupName = props.names
-    const points = props.pointss
-    const tasks = props.tasks
-    const tasksScores = props.tasksScores
+    const groupName = props.name
+    const points = props.points
+    const tasks = props.task
+    const taskScore = props.taskScore
  
     const listItems = tasks.map((task) =>  
     <div>
       <li>{task}</li>
     </div>);
   
-  const listItems2 = tasksScores.map((score) =>
+  const listItems2 = taskScore.map((score) =>
     <div>
       <li>{score}</li>
     </div>);

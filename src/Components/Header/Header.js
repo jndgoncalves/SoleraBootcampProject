@@ -1,5 +1,5 @@
 // import '../../App.css';
-import solera from "./solera.svg";
+import solera from "../../Images/solera.svg";
 import "./Header.css"
 
 
@@ -12,7 +12,9 @@ const clickHandler = event => {
     }
 return ( 
     <div className="headerDiv">
+      <a href="http://www.localhost:3000">
     <div className="solera"><img src={solera} alt="solera logo" height="250" width="500" className="soleraImg"></img></div>
+      </a>
     <h1>Solera Teams Scores</h1>
     <div className="sideButtonsDiv">
     <button onClick={clickHandler} id="addGroup" className="sideButtons"> Group </button>

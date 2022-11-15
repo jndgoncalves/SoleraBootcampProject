@@ -25,58 +25,97 @@ export default function BigDiv() {
   }
 
   const [isShown, setIsShown] = useState(false);
+
   const handleClick = event => {
     setIsShown(current => !current);
-    idNumber = event.currentTarget.id;
+    const groupDetail = {
+      id: event.currentTarget.id,
+      name: event.currentTarget.name,
+      points: event.currentTarget.points,
+      tasks: {task1},
+      taskScore: {tasksScore1}
+    };
+    return 
+    
+    {isShown && (
+      <div className="ResultsDiv" id="Details">
+        <div className="DetailsDiv">
+          {/* {map((groupDetail) => (<GroupDetails name={groupDetail.name} points={groupDetail.points} task={groupDetail.task} taskScore={groupDetail.taskScore}/>))} */}
+      <GroupDetails
+        name={event.currentTarget.name} 
+        points={event.currentTarget.points} 
+        //assignment={event.currentTarget.assignment}
+        task={task1}
+        taskScore={tasksScore1}
+        />
+    </div>
+    </div>
+          )}
   };
 
   const addGroupHandler = (group) => {
     console.log(group)
+    
   }
 
-  const grupo =[
-    {name: 'Group 1', points: '100', assignment:'5'},
-    {name: 'Group 2', points: '150', assignment:'8'},
-    {name: 'Group 3', points: '130', assignment:'6'},
-    {name: 'Group 4', points: '95', assignment:'3'}];
+  let groupList =[
+    {id: 1, name: 'Group 1', points: '100', assignment:'5'},
+    {id: 2, name: 'Group 2', points: '150', assignment:'8'},
+    {id: 3, name: 'Group 3', points: '130', assignment:'6'},
+    {id: 4, name: 'Group 4', points: '95', assignment:'3'}];
 
   return (
     <>
       <div className="App" id="App">
-        <Header />
         <div className="BigDiv" id="BigDiv">
-      
-      <button onClick={handleClick} id="1"><Group name={grupo[0].name} points={grupo[0].points} assignment={grupo[0].assignment}></Group></button>
-      <button onClick={handleClick} id="2"><Group name={grupo[1].name} points={grupo[1].points} assignment={grupo[1].assignment}></Group></button>
-      <button onClick={handleClick} id="3"><Group name={grupo[2].name} points={grupo[2].points} assignment={grupo[2].assignment}></Group></button>
-      <button onClick={handleClick} id="4"><Group name={grupo[3].name} points={grupo[3].points} assignment={grupo[3].assignment}></Group></button>
+
+          {groupList.map((groupList) => 
+          (<button onClick={handleClick} id={groupList.id} activeGroup={groupList}>
+          <Group
+            name={groupList.name} 
+            points={groupList.points} 
+            assignment={groupList.assignment}
+            /></button>
+            ))}
     
       </div> 
 
         <div className="ResultsDiv" id="Results">
           <NewGroup onAddGroup={addGroupHandler} />
           <AddPoints />
+          
           {isShown && (
             <div className="ResultsDiv" id="Details">
               {(() => {
-                { console.log(idNumber) }
+                { 
+                  /*{groupList.map((groupList) => 
+                    (<div className="DetailsDiv">
+                    <GroupDetails
+                      name={groupList.name} 
+                      points={groupList.points} 
+                      assignment={groupList.assignment}
+                      /></div>
+                      ))}*/
+
+
+                  console.log(idNumber) }
                 if (idNumber === "1") {
                   return (
-                    <div className="DetailsDiv"><GroupDetails names="Group 1" pointss="95" tasks={task1} tasksScores={tasksScore1} /></div>
+                    <div className="DetailsDiv"><GroupDetails name="Group 1" points="95" task={task1} taskScore={tasksScore1} /></div>
                   )
                 } if (idNumber === "2") {
                   return (
-                    <div className="DetailsDiv"><GroupDetails names="Group 2" pointss="125" tasks={task2} tasksScores={tasksScore2} /></div>
+                    <div className="DetailsDiv"><GroupDetails names="Group 2" pointss="125" tasks={task2} taskScores={tasksScore2} /></div>
                   )
                 }
                 if (idNumber === "3") {
                   return (
-                    <div className="DetailsDiv"><GroupDetails names="Group 3" pointss="59" tasks={task3} tasksScores={tasksScore3} /></div>
+                    <div className="DetailsDiv"><GroupDetails names="Group 3" pointss="59" tasks={task3} taskScores={tasksScore3} /></div>
                   )
                 }
                 if (idNumber === "4") {
                   return (
-                    <div className="DetailsDiv"><GroupDetails names="Group 4" pointss="68" tasks={task4} tasksScores={tasksScore4} /></div>
+                    <div className="DetailsDiv"><GroupDetails names="Group 4" pointss="68" tasks={task4} taskScores={tasksScore4} /></div>
                   )
                 }
               })()}
