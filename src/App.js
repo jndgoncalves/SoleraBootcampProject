@@ -6,6 +6,8 @@ import AddPoints from "./Components/AddPoints/AddPoints";
 import GroupDetails from "./Components/GroupDetails/GroupDetails";
 import {useState} from 'react';
 import Header from "./Components/Header/Header";
+import ResultsDiv from "./Components/ResultsDiv/ResultsDiv";
+// import Card from "./Components/Card/card";
 
 
 const task1 = ["HTML", "React", "JS", "c++"];
@@ -18,7 +20,7 @@ const task4 = ["HTML", "React", "JS", "c++"];
 const tasksScore4 = [33, 66, 32, 21];
 let idNumber
 
-const App = (props) => {
+const App = () => {
   const newGroupShowing = "hidden";
   const clickAddGroupHandler = () => {
     newGroupShowing = "";
@@ -27,24 +29,31 @@ const App = (props) => {
     
   }
 
-  const [isShown, setIsShown] = useState(false);
-  const handleClick = event => {
-    setIsShown(current => !current);
-    idNumber=event.currentTarget.id;
-  };
+  const grupo =[
+    {name: 'Group 1', points: '100', assignment:'5'},
+    {name: 'Group 2', points: '150', assignment:'8'},
+    {name: 'Group 3', points: '130', assignment:'6'},
+    {name: 'Group 4', points: '95', assignment:'3'}];
+
+const [isShown, setIsShown] = useState(false);
+const handleClick = event => {
+setIsShown(current => !current);
+idNumber=event.currentTarget.id;
+ };
 
   return <div className="App" id="App">
     <Header />
-        <div className="BigDiv" id="BigDiv">
-       <button onClick={handleClick} id="1"><GroupCard name="Group 1" points="100" assignment="2"></GroupCard></button>
-        <button onClick={handleClick} id="2"><GroupCard name="Group 2" points="100" assignment="2"></GroupCard></button>
-        <button onClick={handleClick} id="3"><GroupCard name="Group 3" points="100" assignment="2"></GroupCard></button>
-        <button onClick={handleClick} id="4"><GroupCard name="Group 4" points="100" assignment="2"></GroupCard></button>
-        </div>
+    {/* <ResultsDiv /> */}
+      <div className="BigDiv" id="BigDiv">
+        <button onClick={handleClick} id="1"><Group name={grupo[0].name} points={grupo[0].points} assignment={grupo[0].assignment}></Group></button>
+        <button onClick={handleClick} id="2"><Group name={grupo[1].name} points={grupo[1].points} assignment={grupo[1].assignment}></Group></button>
+        <button onClick={handleClick} id="3"><Group name={grupo[2].name} points={grupo[2].points} assignment={grupo[2].assignment}></Group></button>
+        <button onClick={handleClick} id="4"><Group name={grupo[3].name} points={grupo[3].points} assignment={grupo[3].assignment}></Group></button>
+        </div> 
       <div className="ResultsDiv" id="Results">
       <NewGroup />
       <AddPoints />
-{isShown && (
+      {isShown && (
   <div className="ResultsDiv" id="Details">
           {(() => {
         {console.log(idNumber)}
@@ -74,5 +83,4 @@ const App = (props) => {
 
 </div>
 }
-
 export default App;
