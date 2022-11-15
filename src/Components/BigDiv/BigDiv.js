@@ -54,7 +54,7 @@ export default function BigDiv() {
       </div> 
 
         <div className="ResultsDiv" id="Results">
-          <NewGroup onAddGroup={addGroupHandler} />
+          {/* <NewGroup onAddGroup={addGroupHandler} /> */}
           <AddPoints />
           {isShown && (
             <div className="ResultsDiv" id="Details">

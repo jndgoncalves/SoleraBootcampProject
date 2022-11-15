@@ -2,6 +2,7 @@ import "./GroupForm.css";
 import React, { useState } from 'react'
 import App from "./../../App.js"
 import Popup from "../Popup/Popup";
+import Header from "../Header/Header";
 
 
 const GroupForm = (props) => {
@@ -33,13 +34,13 @@ const GroupForm = (props) => {
         setEnteredAssignment('');
     }
 
-    const [buttonPopup, setButtonPopup] = useState(false);
+     const [buttonPopup, setButtonPopup] = useState(false);
 
     return <form onSubmit={submitHandler}>
         <div id="textDiv">
             
-            <button  onClick={() => setButtonPopup(true)}>Create New Group</button>
-            <Popup trigger = {buttonPopup} setTrigger={setButtonPopup}>
+            {/* { <button  onClick={() => setButtonPopup(true)} id="addGroup">Create New Group</button>  } */}
+            {/* <Popup trigger = {buttonPopup} setTrigger={setButtonPopup} id={Popup}> */}
                 <h3>Create a new group</h3>
                 <label>Group name:</label>
             <input type="text" min="1" required="0" onChange={nameChangeHandler} value={enteredName}></input>
@@ -48,7 +49,7 @@ const GroupForm = (props) => {
             <label>Assignments:</label>
             <input type="number" min="0" id="assignments" required="0" onChange={assignmentChangeHandler} value={enteredAssignment}></input>
             <button type="submit">Add Group</button>
-            </Popup>
+            {/* </Popup> */}
         </div>
     </form>
 }
