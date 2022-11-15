@@ -9,7 +9,7 @@ const App = () => {
     <> 
     <div className="App" id="App">
     <Header />
-      <BigDiv />
+    <BigDiv />
     </div>
     </>
   );

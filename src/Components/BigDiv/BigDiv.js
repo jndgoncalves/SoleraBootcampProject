@@ -19,7 +19,7 @@ const task4 = ["HTML", "React", "JS", "c++"];
 const tasksScore4 = [33, 66, 32, 21];
 let idNumber
 
-export default function BigDiv(props) {
+export default function BigDiv() {
 
   const clickHandler = () => {
 
@@ -35,9 +35,7 @@ export default function BigDiv(props) {
     console.log(group)
   }
 
-  const managementPressed = event =>{
-
-  }
+  
 
   const grupo =[
     {name: 'Group 1', points: '100', assignment:'5'},
@@ -55,7 +53,7 @@ export default function BigDiv(props) {
     
       </div> 
 
-      <div className="ResultsDiv" style={{visibility:'visible'}} >
+      <div className="ResultsDiv" >
           <NewGroup onAddGroup={addGroupHandler} />
           <AddPoints />
       
