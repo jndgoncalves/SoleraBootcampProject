@@ -33,7 +33,7 @@ const GroupForm = () => {
         setEnteredPoints('');
         setEnteredAssignment('');
         newGroupShowing = "hidden";
-    }
+    } 
 
     return <form onSubmit={submitHandler}>
         <div id="textDiv" hidden={newGroupShowing}>

@@ -45,35 +45,37 @@ idNumber=event.currentTarget.id;
     <Header />
     {/* <ResultsDiv /> */}
       <div className="BigDiv" id="BigDiv">
+      
         <button onClick={handleClick} id="1"><Group name={grupo[0].name} points={grupo[0].points} assignment={grupo[0].assignment}></Group></button>
         <button onClick={handleClick} id="2"><Group name={grupo[1].name} points={grupo[1].points} assignment={grupo[1].assignment}></Group></button>
         <button onClick={handleClick} id="3"><Group name={grupo[2].name} points={grupo[2].points} assignment={grupo[2].assignment}></Group></button>
         <button onClick={handleClick} id="4"><Group name={grupo[3].name} points={grupo[3].points} assignment={grupo[3].assignment}></Group></button>
+      
         </div> 
       <div className="ResultsDiv" id="Results">
       <NewGroup />
       <AddPoints />
       {isShown && (
-  <div className="ResultsDiv" id="Details">
+  <div className="ResultsDiv" >
           {(() => {
         {console.log(idNumber)}
         if (idNumber==="1") {
           return (
-            <div><GroupDetails names="Group 1" pointss="95" tasks={task1} tasksScores = {tasksScore1} /></div>
+            <div className="DetailsDiv"><GroupDetails names="Group 1" pointss="95" tasks={task1} tasksScores = {tasksScore1} /></div>
           )
         }  if (idNumber==="2") {
           return (
-            <div><GroupDetails names="Group 2" pointss="125" tasks={task2} tasksScores = {tasksScore2} /></div>
+            <div className="DetailsDiv"><GroupDetails names="Group 2" pointss="125" tasks={task2} tasksScores = {tasksScore2} /></div>
           )
         }
         if (idNumber==="3") {
           return (
-            <div><GroupDetails names="Group 3" pointss="59" tasks={task3} tasksScores = {tasksScore3} /></div>
+            <div className="DetailsDiv"><GroupDetails names="Group 3" pointss="59" tasks={task3} tasksScores = {tasksScore3} /></div>
           )
         }
         if (idNumber==="4") {
           return (
-            <div><GroupDetails names="Group 4" pointss="68" tasks={task4} tasksScores = {tasksScore4} /></div>
+            <div className="DetailsDiv"><GroupDetails names="Group 4" pointss="68" tasks={task4} tasksScores = {tasksScore4} /></div>
           )
         }
       })()}
