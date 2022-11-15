@@ -17,9 +17,7 @@ const clickHandler = event => {
     const addGroupHandler = (group) => {
       console.log(group)
     }
-    const addPointsHandler = (group) => {
-      console.log(group)
-    }
+    
     const [buttonPopup, setButtonPopup] = useState(false);
     const [buttonPopupPoint, setButtonPopupPoint] = useState(false);
 return ( 

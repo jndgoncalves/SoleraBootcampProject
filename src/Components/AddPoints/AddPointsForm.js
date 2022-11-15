@@ -32,6 +32,7 @@ function AddPointsForm(props) {
 
     return <form>
         <div id="textDiv" hidden="">
+            <h3>Add Points</h3>
             <label>Number of Points</label>
             <input type="number" min="0" id="point" required="0" onChange={PointsChangeHandler} value={enteredPoints}></input>
             <label>Team</label>
