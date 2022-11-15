@@ -17,7 +17,11 @@ const tasksScore3 = [77, 33, 76, 99];
 const task4 = ["HTML", "React", "JS", "c++"];
 const tasksScore4 = [33, 66, 32, 21];
 let idNumber
-
+let groupList =[
+  {id: 1, name: 'Group 1', points: '100', assignment:'5', tasks:task1, score:tasksScore1},
+  {id: 2, name: 'Group 2', points: '150', assignment:'8', tasks:task2, score:tasksScore2},
+  {id: 3, name: 'Group 3', points: '130', assignment:'6', tasks:task3, score:tasksScore3},
+  {id: 4, name: 'Group 4', points: '95', assignment:'3', tasks:task4, score:tasksScore4}];
 export default function BigDiv() {
 
   const clickHandler = () => {
@@ -59,11 +63,7 @@ export default function BigDiv() {
     
   }
 
-  let groupList =[
-    {id: 1, name: 'Group 1', points: '100', assignment:'5'},
-    {id: 2, name: 'Group 2', points: '150', assignment:'8'},
-    {id: 3, name: 'Group 3', points: '130', assignment:'6'},
-    {id: 4, name: 'Group 4', points: '95', assignment:'3'}];
+
 
   return (
     <>
@@ -100,25 +100,29 @@ export default function BigDiv() {
 
 
                   console.log(idNumber) }
-                if (idNumber === "1") {
-                  return (
-                    <div className="DetailsDiv"><GroupDetails name="Group 1" points="95" task={task1} taskScore={tasksScore1} /></div>
-                  )
-                } if (idNumber === "2") {
-                  return (
-                    <div className="DetailsDiv"><GroupDetails names="Group 2" pointss="125" tasks={task2} taskScores={tasksScore2} /></div>
-                  )
-                }
-                if (idNumber === "3") {
-                  return (
-                    <div className="DetailsDiv"><GroupDetails names="Group 3" pointss="59" tasks={task3} taskScores={tasksScore3} /></div>
-                  )
-                }
-                if (idNumber === "4") {
-                  return (
-                    <div className="DetailsDiv"><GroupDetails names="Group 4" pointss="68" tasks={task4} taskScores={tasksScore4} /></div>
-                  )
-                }
+                // if (idNumber === "1") {
+                //   return (
+                //     <div className="DetailsDiv"><GroupDetails name="Group 1" points="95" task={task1} taskScore={tasksScore1} /></div>
+                //   )
+                // } if (idNumber === "2") {
+                //   return (
+                //     <div className="DetailsDiv"><GroupDetails name="Group 2" points="125" task={task2} taskScore={tasksScore2} /></div>
+                //   )
+                // }
+                // if (idNumber === "3") {
+                //   return (
+                //     <div className="DetailsDiv"><GroupDetails name="Group 3" points="59" task={task3} taskScore={tasksScore3} /></div>
+                //   )
+                // }
+                // if (idNumber === "4") {
+                //   return (
+                //     <div className="DetailsDiv"><GroupDetails name="Group 4" pointss="68" task={task4} taskScore={tasksScore4} /></div>
+                //   )
+                // }
+                console.log(groupList[0].name);
+                return (
+                <div className="DetailsDiv"><GroupDetails name={groupList[idNumber-1].name} points={groupList[idNumber-1].points} task={groupList[idNumber-1].tasks} taskScore={groupList[idNumber-1].score} /></div>
+                )
               })()}
             </div>
           )}
