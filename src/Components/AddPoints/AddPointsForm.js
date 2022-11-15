@@ -31,14 +31,14 @@ function AddPointsForm(props) {
     };
 
     return <form>
-        <div id="textDiv" hidden="">
-            <h3>Add Points</h3>
-            <label>Number of Points</label>
-            <input type="number" min="0" id="point" required="0" onChange={PointsChangeHandler} value={enteredPoints}></input>
-            <label>Team</label>
-            <input type="text" min="1" id="team" required="0" onChange={TeamChangeHandler} value={enteredTeam}></input>
-            <label>Description </label>
-            <input type="text" min="0" id="description" required="0" onChange={DescriptionChangeHandler} value={enteredDescription}></input>
+        <div className="textDiv">
+            <div className="labelDiv">Add points to group</div>
+            <label>Points: </label>
+            <input type="number" min="0" required="0" onChange={PointsChangeHandler} value={enteredPoints}></input><p></p>
+            <label>Team: </label>
+            <input type="text" min="1" required="0" onChange={TeamChangeHandler} value={enteredTeam}></input><p></p>
+            <label>Description: </label>
+            <input type="text" min="0" required="0" onChange={DescriptionChangeHandler} value={enteredDescription}></input><p></p>
             <button type="submit">Add Points</button>
         </div>
 

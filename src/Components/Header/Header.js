@@ -1,13 +1,16 @@
-// import '../../App.css';
 import solera from "./solera.svg";
 import "./Header.css"
+import Popup from "../Popup/Popup.js";
+import React, { useState } from 'react'
+import NewGroup from '../NewGroup/NewGroup.js';
+import AddPoints from "../AddPoints/AddPoints.js";
 
 
 function Header(){
+    
 
-
-const clickHandler = (event)=> {
-        let buttonId=event.currentTarget.id;
+const clickHandler = event => {
+        let buttonId = event.currentTarget.id;
         console.log(buttonId);
     }
     const addGroupHandler = (group) => {
@@ -18,7 +21,7 @@ const clickHandler = (event)=> {
     const [buttonPopupPoint, setButtonPopupPoint] = useState(false);
 return ( 
     <div className="headerDiv">
-    <div className="solera" ><img src={solera} alt="solera logo" height="250" width="500" className="soleraImg" ></img></div>
+    <div className="solera"><img src={solera} alt="solera logo" height="250" width="500" className="soleraImg"></img></div>
     <h1>Solera Teams Scores</h1>
     <div className="sideButtonsDiv">
     <button onClick={() => setButtonPopup(true)} id="addGroup" className="sideButtons" > Group </button>
