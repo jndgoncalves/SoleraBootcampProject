@@ -1,4 +1,4 @@
-import App from "../../App";
+// import '../../App.css';
 import solera from "./solera.svg";
 import "./Header.css"
 
