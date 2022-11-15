@@ -1,6 +1,5 @@
 import "./GroupForm.css";
 import React, { useState } from 'react'
-import App from "./../../App.js"
 
 
 const GroupForm = (props) => {
@@ -34,6 +33,8 @@ const GroupForm = (props) => {
 
     return <form onSubmit={submitHandler}>
         <div id="textDiv">
+            
+            <h3>Create a new group</h3>
             <label>Group name:</label>
             <input type="text" min="1" required="0" onChange={nameChangeHandler} value={enteredName}></input>
             {/* <label>Points:</label>
@@ -41,7 +42,8 @@ const GroupForm = (props) => {
             <label>Assignments:</label>
             <input type="number" min="0" id="assignments" required="0" onChange={assignmentChangeHandler} value={enteredAssignment}></input> */}
             <button type="submit">Add Group</button>
-        </div> 
+            
+        </div>
     </form>
 }
 
