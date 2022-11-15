@@ -28,6 +28,7 @@ export default function BigDiv() {
 
   const handleClick = event => {
     setIsShown(current => !current);
+    idNumber=event.currentTarget.id;
     const groupDetail = {
       id: event.currentTarget.id,
       name: event.currentTarget.name,
@@ -35,22 +36,22 @@ export default function BigDiv() {
       tasks: {task1},
       taskScore: {tasksScore1}
     };
-    return 
+   // return 
     
-    {isShown && (
-      <div className="ResultsDiv" id="Details">
-        <div className="DetailsDiv">
-          {/* {map((groupDetail) => (<GroupDetails name={groupDetail.name} points={groupDetail.points} task={groupDetail.task} taskScore={groupDetail.taskScore}/>))} */}
-      <GroupDetails
-        name={event.currentTarget.name} 
-        points={event.currentTarget.points} 
-        //assignment={event.currentTarget.assignment}
-        task={task1}
-        taskScore={tasksScore1}
-        />
-    </div>
-    </div>
-          )}
+    // {isShown && (
+    //   <div className="ResultsDiv" id="Details">
+    //     <div className="DetailsDiv">
+    //       {/* {map((groupDetail) => (<GroupDetails name={groupDetail.name} points={groupDetail.points} task={groupDetail.task} taskScore={groupDetail.taskScore}/>))} */}
+    //   <GroupDetails
+    //     name={event.currentTarget.name} 
+    //     points={event.currentTarget.points} 
+    //     //assignment={event.currentTarget.assignment}
+    //     task={task1}
+    //     taskScore={tasksScore1}
+    //     />
+    // </div>
+    // </div>
+    //       )}
   };
 
   const addGroupHandler = (group) => {
