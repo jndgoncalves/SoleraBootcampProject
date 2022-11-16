@@ -22,15 +22,11 @@ let groupList =[
   {id: 4, name: 'Group 4', points: '95', assignment:'3', tasks:task4, score:tasksScore4}];
 export default function BigDiv() {
 
-  const clickHandler = () => {
-
-  }
-
   const [isShown, setIsShown] = useState(false);
 
   const handleClick = event => {
     setIsShown(current => !current);
-    idNumber=event.currentTarget.id;
+    idNumber=parseInt(event.currentTarget.id);
     const groupDetail = {
       id: event.currentTarget.id,
       name: event.currentTarget.name,
@@ -39,10 +35,6 @@ export default function BigDiv() {
       taskScore: {tasksScore1}
     };
   };
-
-  const addGroupHandler = (group) => {
-    console.log(group)
-  }
 
   return (
       <div className="App" id="App">
@@ -59,15 +51,15 @@ export default function BigDiv() {
             ))}
     
       </div> 
-
+    
         <div className="ResultsDiv" id="Results">
           {isShown && (
             <div className="ResultsDiv" id="Details">
               {(() => {
                 return (
-                <div className="DetailsDiv">
+                <div className="DetailsDiv" key={groupList[idNumber-1].id+10}>
                   <GroupDetails 
-                    //key={groupList[idNumber-1].id}
+                    key={groupList[idNumber-1].id+20}
                     name={groupList[idNumber-1].name} 
                     points={groupList[idNumber-1].points} 
                     task={groupList[idNumber-1].tasks} 
