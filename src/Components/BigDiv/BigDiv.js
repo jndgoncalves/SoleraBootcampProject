@@ -15,7 +15,11 @@ const tasksScore3 = [77, 33, 76, 99];
 const task4 = ["HTML", "React", "JS", "c++"];
 const tasksScore4 = [33, 66, 32, 21];
 let idNumber
-
+let groupList =[
+  {id: 1, name: 'Group 1', points: '100', assignment:'5', tasks:task1, score:tasksScore1},
+  {id: 2, name: 'Group 2', points: '150', assignment:'8', tasks:task2, score:tasksScore2},
+  {id: 3, name: 'Group 3', points: '130', assignment:'6', tasks:task3, score:tasksScore3},
+  {id: 4, name: 'Group 4', points: '95', assignment:'3', tasks:task4, score:tasksScore4}];
 export default function BigDiv() {
 
   const clickHandler = () => {
@@ -26,6 +30,7 @@ export default function BigDiv() {
 
   const handleClick = event => {
     setIsShown(current => !current);
+    idNumber=event.currentTarget.id;
     const groupDetail = {
       id: event.currentTarget.id,
       name: event.currentTarget.name,
@@ -33,34 +38,11 @@ export default function BigDiv() {
       tasks: {task1},
       taskScore: {tasksScore1}
     };
-    return 
-    
-    {isShown && (
-      <div className="ResultsDiv" id="Details">
-        <div className="DetailsDiv">
-          {/* {map((groupDetail) => (<GroupDetails name={groupDetail.name} points={groupDetail.points} task={groupDetail.task} taskScore={groupDetail.taskScore}/>))} */}
-      <GroupDetails
-        name={event.currentTarget.name} 
-        points={event.currentTarget.points} 
-        //assignment={event.currentTarget.assignment}
-        task={task1}
-        taskScore={tasksScore1}
-        />
-    </div>
-    </div>
-          )}
   };
 
   const addGroupHandler = (group) => {
     console.log(group)
-    
   }
-
-  let groupList =[
-    {id: 1, name: 'Group 1', points: '100', assignment:'5'},
-    {id: 2, name: 'Group 2', points: '150', assignment:'8'},
-    {id: 3, name: 'Group 3', points: '130', assignment:'6'},
-    {id: 4, name: 'Group 4', points: '95', assignment:'3'}];
 
   return (
       <div className="App" id="App">
@@ -82,37 +64,9 @@ export default function BigDiv() {
           {isShown && (
             <div className="ResultsDiv" id="Details">
               {(() => {
-                { 
-                  /*{groupList.map((groupList) => 
-                    (<div className="DetailsDiv">
-                    <GroupDetails
-                      name={groupList.name} 
-                      points={groupList.points} 
-                      assignment={groupList.assignment}
-                      /></div>
-                      ))}*/
-
-
-                  console.log(idNumber) }
-                if (idNumber === "1") {
-                  return (
-                    <div className="DetailsDiv"><GroupDetails name="Group 1" points="95" task={task1} taskScore={tasksScore1} /></div>
-                  )
-                } if (idNumber === "2") {
-                  return (
-                    <div className="DetailsDiv"><GroupDetails names="Group 2" pointss="125" tasks={task2} taskScores={tasksScore2} /></div>
-                  )
-                }
-                if (idNumber === "3") {
-                  return (
-                    <div className="DetailsDiv"><GroupDetails names="Group 3" pointss="59" tasks={task3} taskScores={tasksScore3} /></div>
-                  )
-                }
-                if (idNumber === "4") {
-                  return (
-                    <div className="DetailsDiv"><GroupDetails names="Group 4" pointss="68" tasks={task4} taskScores={tasksScore4} /></div>
-                  )
-                }
+                return (
+                <div className="DetailsDiv"><GroupDetails name={groupList[idNumber-1].name} points={groupList[idNumber-1].points} task={groupList[idNumber-1].tasks} taskScore={groupList[idNumber-1].score} /></div>
+                )
               })()}
             </div>
           )}
