@@ -63,7 +63,6 @@ export default function BigDiv() {
     {id: 4, name: 'Group 4', points: '95', assignment:'3'}];
 
   return (
-    <>
       <div className="App" id="App">
         <div className="BigDiv" id="BigDiv">
 
@@ -117,6 +116,6 @@ export default function BigDiv() {
             </div>
           )}
         </div>
-    </>
+    </div>
   )
 }
