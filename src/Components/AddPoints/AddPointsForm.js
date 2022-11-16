@@ -1,5 +1,5 @@
-import "./AddPointsForm.css"
-import React, { useState } from 'react'
+import "./AddPointsForm.css";
+import React, { useState } from 'react';
 
 function AddPointsForm(props) {
     const [enteredPoints, setEnteredPoints] = useState("");
