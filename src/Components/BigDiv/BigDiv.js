@@ -49,8 +49,9 @@ export default function BigDiv() {
         <div className="BigDiv" id="BigDiv">
 
           {groupList.map((groupList) => 
-          (<button onClick={handleClick} id={groupList.id} activeGroup={groupList}>
+          (<button onClick={handleClick} id={groupList.id} key={groupList.id}>
           <Group
+            key={groupList.id}
             name={groupList.name} 
             points={groupList.points} 
             assignment={groupList.assignment}
@@ -64,7 +65,14 @@ export default function BigDiv() {
             <div className="ResultsDiv" id="Details">
               {(() => {
                 return (
-                <div className="DetailsDiv"><GroupDetails name={groupList[idNumber-1].name} points={groupList[idNumber-1].points} task={groupList[idNumber-1].tasks} taskScore={groupList[idNumber-1].score} /></div>
+                <div className="DetailsDiv">
+                  <GroupDetails 
+                    //key={groupList[idNumber-1].id}
+                    name={groupList[idNumber-1].name} 
+                    points={groupList[idNumber-1].points} 
+                    task={groupList[idNumber-1].tasks} 
+                    taskScore={groupList[idNumber-1].score}
+                    /></div>
                 )
               })()}
             </div>
