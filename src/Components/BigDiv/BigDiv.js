@@ -40,30 +40,11 @@ export default function BigDiv() {
       tasks: {task1},
       taskScore: {tasksScore1}
     };
-   // return 
-    
-    // {isShown && (
-    //   <div className="ResultsDiv" id="Details">
-    //     <div className="DetailsDiv">
-    //       {/* {map((groupDetail) => (<GroupDetails name={groupDetail.name} points={groupDetail.points} task={groupDetail.task} taskScore={groupDetail.taskScore}/>))} */}
-    //   <GroupDetails
-    //     name={event.currentTarget.name} 
-    //     points={event.currentTarget.points} 
-    //     //assignment={event.currentTarget.assignment}
-    //     task={task1}
-    //     taskScore={tasksScore1}
-    //     />
-    // </div>
-    // </div>
-    //       )}
   };
 
   const addGroupHandler = (group) => {
     console.log(group)
-    
   }
-
-
 
   return (
     <>
@@ -88,38 +69,6 @@ export default function BigDiv() {
           {isShown && (
             <div className="ResultsDiv" id="Details">
               {(() => {
-                { 
-                  /*{groupList.map((groupList) => 
-                    (<div className="DetailsDiv">
-                    <GroupDetails
-                      name={groupList.name} 
-                      points={groupList.points} 
-                      assignment={groupList.assignment}
-                      /></div>
-                      ))}*/
-
-
-                  console.log(idNumber) }
-                // if (idNumber === "1") {
-                //   return (
-                //     <div className="DetailsDiv"><GroupDetails name="Group 1" points="95" task={task1} taskScore={tasksScore1} /></div>
-                //   )
-                // } if (idNumber === "2") {
-                //   return (
-                //     <div className="DetailsDiv"><GroupDetails name="Group 2" points="125" task={task2} taskScore={tasksScore2} /></div>
-                //   )
-                // }
-                // if (idNumber === "3") {
-                //   return (
-                //     <div className="DetailsDiv"><GroupDetails name="Group 3" points="59" task={task3} taskScore={tasksScore3} /></div>
-                //   )
-                // }
-                // if (idNumber === "4") {
-                //   return (
-                //     <div className="DetailsDiv"><GroupDetails name="Group 4" pointss="68" task={task4} taskScore={tasksScore4} /></div>
-                //   )
-                // }
-                console.log(groupList[0].name);
                 return (
                 <div className="DetailsDiv"><GroupDetails name={groupList[idNumber-1].name} points={groupList[idNumber-1].points} task={groupList[idNumber-1].tasks} taskScore={groupList[idNumber-1].score} /></div>
                 )
