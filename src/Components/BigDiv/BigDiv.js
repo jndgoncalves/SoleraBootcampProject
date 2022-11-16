@@ -1,11 +1,9 @@
 import React, { useState } from 'react'
-import GroupCard from '../Group/GroupCard';
 import Header from '../Header/Header';
-import NewGroup from '../NewGroup/NewGroup.js';
-import AddPoints from '../AddPoints/AddPoints.js';
 import GroupDetails from '../GroupDetails/GroupDetails';
 import Group from '../Group/Group';
-import '../../App.css';
+import './BigDiv.css';
+
 
 
 const task1 = ["HTML", "React", "JS", "c++"];
@@ -47,7 +45,6 @@ export default function BigDiv() {
   }
 
   return (
-    <>
       <div className="App" id="App">
         <div className="BigDiv" id="BigDiv">
 
@@ -63,9 +60,6 @@ export default function BigDiv() {
       </div> 
 
         <div className="ResultsDiv" id="Results">
-          <NewGroup onAddGroup={addGroupHandler} />
-          <AddPoints />
-          
           {isShown && (
             <div className="ResultsDiv" id="Details">
               {(() => {
@@ -76,7 +70,6 @@ export default function BigDiv() {
             </div>
           )}
         </div>
-      </div>
-    </>
+    </div>
   )
 }
