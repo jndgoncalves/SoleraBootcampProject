@@ -26,10 +26,6 @@ let groupList =[
   {id: 6, name: 'Group 3', points: '130', assignment:'6', tasks:task3, score:tasksScore3}];
 export default function BigDiv() {
 
-  const clickHandler = () => {
-
-  }
-
   const [isShown, setIsShown] = useState(false);
   const [buttonPopup, setButtonPopup] = useState(false);
 
@@ -45,10 +41,6 @@ export default function BigDiv() {
       taskScore: {tasksScore1}
     };
   };
-
-  const addGroupHandler = (group) => {
-    console.log(group)
-  }
 
   return (
       <>
