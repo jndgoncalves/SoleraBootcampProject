@@ -1,5 +1,14 @@
-ul {
-    display: inline-block;
-    *display: inline;
-    zoom: 1
+
+
+.DetailsDiv{
+        color:rgb(86, 87, 87);
+        font-size: 15pt;
+        font-weight: bold;
+        text-align: left;
 }
+
+.labelDiv{
+        font-size: 18pt;
+        text-align: left;
+        color: rgba(0, 0, 0, 0.573);
+    }
