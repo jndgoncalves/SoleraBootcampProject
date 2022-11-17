@@ -11,9 +11,6 @@ import AddAssignment from "../AddAssignment/AddAssignment";
 function Header(){
     
 
-    const addGroupHandler = (group) => {
-      console.log(group)
-    }
     
     const [buttonPopup, setButtonPopup] = useState(false);
     const [buttonPopupPoint, setButtonPopupPoint] = useState(false);
@@ -28,7 +25,7 @@ return (
     <div className="sideButtonsDiv">
     <button onClick={() => setButtonPopup(true)} id="addGroup" className="sideButtons" > Group </button>
     <Popup trigger = {buttonPopup} setTrigger={setButtonPopup} id={Popup}>
-      <NewGroup onAddGroup={addGroupHandler} />
+      <NewGroup />
     </Popup>
     <button onClick={() => setButtonPopupAnotherPoint(true)} id="addAssignment" className="sideButtons"> Assignments </button>
     <Popup trigger = {buttonPopupAnotherPoint} setTrigger={setButtonPopupAnotherPoint} id={Popup}>
