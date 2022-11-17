@@ -6,16 +6,28 @@ const GroupDetails = (props) => {
     const points = props.points
     const tasks = props.task
     const taskScore = props.taskScore
+    const isDone = props.isDone
+    let changes;
  
+
     const listItems = tasks.map((task) =>  
-    <p>
+    <div className="insideDiv">
     {task}
-    </p>);
+    </div>);
   
   const listItems2 = taskScore.map((score) =>
-    <p>
+    <div className="insideDiv">
     {score}
-    </p>);
+    </div>);
+  const listItems3 = isDone.map((done) =>
+    <div className="insideDiv">
+      {changes = done}
+    <form>
+              <input type="checkbox" value={listItems} id="subscribe" checked={changes}></input>
+    </form>
+    </div>);
+
+ 
 
 
     return <form>
@@ -24,7 +36,9 @@ const GroupDetails = (props) => {
             <div className="DetailsDiv">
             <div className="DetailsDiv__list">{listItems}</div>
             <div className="DetailsDiv__points">{listItems2}</div>
+            <div className="DetailsDiv__check"> <div className="DetailsDiv__check__DB">{listItems3}</div><div className="DetailsDiv__check__change"></div></div>
             </div>
+            <button type="submit">Add Assignments</button>
         </div>
     </form>;
 }

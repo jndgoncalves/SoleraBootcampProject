@@ -4,13 +4,15 @@ import AddAssignmentForm from "./AddAssignmentForm"
 const addAssignment = (props) => {
      const saveAddAssignmentDataHandler = (enteredAddAssignmentData) =>{
          const addAssignment = {
-            ...enteredAddAssignmentData
+            ...enteredAddAssignmentData,
+            taskIsDone: false,
+            id:Math.random().toString()
          }
          props.onAddAssignment(addAssignment)
      }
    
     return <div>
-        <AddAssignmentForm onSaveAddPointsData = {saveAddAssignmentDataHandler}/>
+        <AddAssignmentForm onSaveAddAssignmentData = {saveAddAssignmentDataHandler}/>
     </div>
 }
 
