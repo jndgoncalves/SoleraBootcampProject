@@ -19,14 +19,35 @@ const GroupDetails = (props) => {
     <div className="insideDiv">
     {score}
     </div>);
-  const listItems3 = isDone.map((done) =>
-    <div className="insideDiv">
-      {changes = done}
-    <form>
-              <input type="checkbox" value={listItems} id="subscribe" checked={changes}></input>
-    </form>
-    </div>);
+  // const listItems3 = isDone.map((done) =>
+  //   <div className="insideDiv">
+  //     {changes = done}
+  //   <form>
+  //             <input type="checkbox" value={listItems} id="subscribe" checked={changes}></input>
+  //   </form>
+  //   </div>);
+  const listItems3 = isDone.map((done) =>{
+     changes = done;
+     
+    (() => {
+      
+      if (changes == true) {
+        console.log(changes)
+        console.log("completed!")
 
+        return (<div className="insideDiv"> Completed! </div>)
+
+      }
+
+      else{
+        console.log(changes)
+        console.log("not completed!")
+
+        return (<div className="insideDiv">Still not completed!</div>)
+
+      }
+
+    })()});
  
 
 
