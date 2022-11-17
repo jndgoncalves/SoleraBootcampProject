@@ -18,13 +18,15 @@ const GroupDetails = (props) => {
     </p>);
 
 
-    return <div className="ResultsDiv">
-            <div className="labelDiv">{groupName} {points} Points</div>
-             <div className="DetailsDiv">
+    return <form>
+        <div className="textDiv">
+          <div className="labelDiv">{groupName} has {points} Points!</div>
+            <div className="DetailsDiv">
             <div className="DetailsDiv__list">{listItems}</div>
             <div className="DetailsDiv__points">{listItems2}</div>
             </div>
         </div>
+    </form>;
 }
 
 export default GroupDetails;
