@@ -7,23 +7,13 @@ import './BigDiv.css';
 import Popup from '../Popup/Popup';
 
 
-let groupList = [];
+// let groupList = [];
+
+// console.log(groupList, " groupList");
+
+
 let idNumber;
 
-
-async function call() {
-  try {
-    const response = await fetch('assets/data.json');
-    console.log(response, "response");
-    groupList = await response.json();
-  } catch (error) {
-    console.log('ocorreu um erro')
-  }
-}
-
-call();
-
-console.log(groupList, " groupList");
 
 //get tasks from first group of groupList
 // const task1 = groupList[0].tasks;
@@ -48,8 +38,9 @@ const tasksScore4 = [33, 66, 32, 21];
 //   { id: 5, name: 'Group 3', points: '130', assignment: '6', tasks: task3, score: tasksScore3 },
 //   { id: 6, name: 'Group 3', points: '130', assignment: '6', tasks: task3, score: tasksScore3 }];
 
-
-
+//   let groupBackend =[
+//     {id...BigDiv, name...BigDiv, points...,assignment[]}
+// ]
 
 
 
@@ -57,6 +48,28 @@ export default function BigDiv() {
 
   const [isShown, setIsShown] = useState(false);
   const [buttonPopup, setButtonPopup] = useState(false);
+  const [groupList, setGroupList] = useState([]);
+
+  async function call() {
+    try {
+      //path to data.json file in public folder
+      // const response = await fetch('data.json');
+      const response = await fetch('http://localhost:8081/getAll', {
+        method: 'GET',
+        mode: 'cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      const groups = await response.json();
+      setGroupList(groups);
+    } catch (error) {
+      console.log('Error with fetching data!', error);
+    }
+  }
+
+  call();
+
 
   const handleClick = event => {
     setButtonPopup(true);
@@ -76,7 +89,7 @@ export default function BigDiv() {
       <div className="BigDiv" id="BigDiv">
 
         {groupList.map((groupList) =>
-        (<button onClick={handleClick} id={groupList.id} key={groupList.id}>
+        (<button onClick={handleClick} id={groupList.name} key={groupList.name}>
           <Group
             key={groupList.id}
             name={groupList.name}
@@ -94,7 +107,6 @@ export default function BigDiv() {
           taskScore={groupList[idNumber - 1]?.score}
         />
       </Popup>
-
     </>
   )
 }
