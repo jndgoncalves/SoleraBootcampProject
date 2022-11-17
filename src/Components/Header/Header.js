@@ -5,21 +5,17 @@ import Popup from "../Popup/Popup.js";
 import React, { useState } from 'react'
 import NewGroup from '../NewGroup/NewGroup.js';
 import AddPoints from "../AddPoints/AddPoints.js";
+import AddAssignment from "../AddAssignment/AddAssignment";
 
 
 function Header(){
     
 
-const clickHandler = event => {
-        let buttonId = event.currentTarget.id;
-        console.log(buttonId);
-    }
-    const addGroupHandler = (group) => {
-      console.log(group)
-    }
     
     const [buttonPopup, setButtonPopup] = useState(false);
     const [buttonPopupPoint, setButtonPopupPoint] = useState(false);
+    const [buttonPopupAnotherPoint, setButtonPopupAnotherPoint] = useState(false);
+    
 return ( 
     <div className="headerDiv">
       <a href="http://www.localhost:3000">
@@ -29,9 +25,12 @@ return (
     <div className="sideButtonsDiv">
     <button onClick={() => setButtonPopup(true)} id="addGroup" className="sideButtons" > Group </button>
     <Popup trigger = {buttonPopup} setTrigger={setButtonPopup} id={Popup}>
-      <NewGroup onAddGroup={addGroupHandler} />
+      <NewGroup />
     </Popup>
-    <button onClick={clickHandler} id="addAssignment" className="sideButtons"> Assignment </button>
+    <button onClick={() => setButtonPopupAnotherPoint(true)} id="addAssignment" className="sideButtons"> Assignments </button>
+    <Popup trigger = {buttonPopupAnotherPoint} setTrigger={setButtonPopupAnotherPoint} id={Popup}>
+      <AddAssignment />
+    </Popup>
     <button onClick={() => setButtonPopupPoint(true)} id="addPoints" className="sideButtons"> Points </button>
     <Popup trigger = {buttonPopupPoint} setTrigger={setButtonPopupPoint} id={Popup}>
     <AddPoints />

@@ -1,5 +1,5 @@
-import "./AddPointsForm.css"
-import React, { useState } from 'react'
+import "./AddPointsForm.css";
+import React, { useState } from 'react';
 
 function AddPointsForm(props) {
     const [enteredPoints, setEnteredPoints] = useState("");
@@ -32,14 +32,14 @@ function AddPointsForm(props) {
 
     return <form>
         <div className="textDiv">
-            <div className="labelDiv">Add points to group</div>
+            <div className="labelDiv">Add extra points to group</div>
             <label>Points: </label>
             <input type="number" min="0" required="0" onChange={PointsChangeHandler} value={enteredPoints}></input><p></p>
             <label>Team: </label>
             <input type="text" min="1" required="0" onChange={TeamChangeHandler} value={enteredTeam}></input><p></p>
             <label>Description: </label>
             <input type="text" min="0" required="0" onChange={DescriptionChangeHandler} value={enteredDescription}></input><p></p>
-            <button type="submit">Add Points</button>
+            <button type="submit" onClick={submitHandler}>Add Points</button>
         </div>
 
     </form>;
