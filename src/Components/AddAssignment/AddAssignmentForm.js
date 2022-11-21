@@ -27,12 +27,12 @@ function AddAssignmentForm(props) {
     };
     return <form>
         <div className="textDiv" onSubmit={submitHandler}>
-            <div className="labelDiv">Add assignments to all groups</div>
-            <label>Name of the assignment: </label>
+            <h1>Add assignments to all groups</h1><p></p>
+            <label className="label">Name of the assignment: </label>
             <input type="text" min="1" required="0" onChange={NameChangeHandler} value={enteredName}></input><p></p>
-            <label>Points: </label>
+            <label className="label">Points: </label>
             <input type="number" min="0" required="0" onChange={PointsChangeHandler} value={enteredPoints}></input><p></p>
-            <button type="submit">Add Points</button>
+            <button type="submit" className="Button">Add Points</button>
         </div>
 
     </form>;

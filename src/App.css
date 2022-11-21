@@ -1,13 +1,16 @@
 body {
-  background-color: rgb(125, 129, 129);
+  background: rgb(46,47,120);
+  background: linear-gradient(180deg, rgba(46,47,120,1) 0%, rgba(67,46,123,1) 35%, rgba(98,44,129,1) 100%);  
+  background-repeat: no-repeat;
+  height: 1000px;
 }
 
 
 .App {
-  background-color: rgb(167, 172, 172);
-  text-align: center;
+  background-color: white;
   margin: 50px auto;
-  height: 1500px;
+  height: 100%;
   width: 1500px;
   border-radius: 20px;
+  padding-bottom: 50px;
 }

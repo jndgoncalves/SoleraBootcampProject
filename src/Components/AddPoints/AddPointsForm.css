@@ -13,15 +13,25 @@
         border-style: inset;
         }
     
-    .textDiv
-    {
-        color:rgb(86, 87, 87);
-        font-size: 15pt;
-        font-weight: bold;
-        text-align: left;
-    }
-    .labelDiv{
-        font-size: 18pt;
-        text-align: left;
-        color: rgba(0, 0, 0, 0.573);
-    }
+        .Button
+        {
+            background: rgb(46,47,120);
+            background: linear-gradient(180deg, rgba(46,47,120,1) 0%, rgba(67,46,123,1) 35%, rgba(98,44,129,1) 100%);
+            color:white;
+        }
+        
+        .textDiv
+        {
+            color:rgb(46, 47, 120);
+            font-size: 15pt;
+            font-weight: bold;
+            text-align: left;
+        
+        }
+        
+        .label{
+            font-size: 11pt;
+            text-align: left;
+            color: rgb(46,47,120);
+            color: linear-gradient(180deg, rgba(46,47,120,1) 0%, rgba(67,46,123,1) 35%, rgba(98,44,129,1) 100%);
+        }

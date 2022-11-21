@@ -2,16 +2,19 @@
     margin-bottom: 30px;
     height: 100px;
     width: 1500px;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid rgb(99, 44, 129);
     display: grid;
     grid-template-columns: 500px 500px 500px;
-    
-    }
+    background-color:white;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+  }
   
   .headerDiv h1{
-      color:aliceblue;
-      font-size: 24pt;
-      font-style: bold;
+    color: rgb(46,47,120);
+    color: linear-gradient(180deg, rgba(46,47,120,1) 0%, rgba(67,46,123,1) 35%, rgba(98,44,129,1) 100%);
+    font-size: 24pt;
+    font-style: bold;
     }
   
   .sideButtons{
@@ -19,7 +22,8 @@
       font-size: 16pt;
       height: 32px;
       width: 150px;
-      background-color: rgb(125, 129, 129);
+      background: rgb(46,47,120);
+    background: linear-gradient(180deg, rgba(46,47,120,1) 0%, rgba(67,46,123,1) 35%, rgba(98,44,129,1) 100%);
       color:aliceblue;
       margin-right: 5px;
       font-style: bold;
@@ -34,6 +38,6 @@
 
   .soleraImg{
     position: absolute;
-    top:-30px;
-    left: 150px; 
+    top:-35px;
+    left: 140px; 
   }
