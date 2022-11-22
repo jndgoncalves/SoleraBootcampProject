@@ -35,6 +35,10 @@ let idNumber;
 // let idNumber;
 // let groupList1 =[
 //   {id: 1, name: 'Group 1', points: '100', assignment:'5', tasks:task1, score:tasksScore1, isDone:taskIsDone1},
+
+//{id: 1, name: 'Group 1', points: '100', assignment:'5', tasks[task1, score, isDone]},
+
+
 //   {id: 2, name: 'Group 2', points: '150', assignment:'8', tasks:task2, score:tasksScore2,isDone:taskIsDone2},
 //  {id: 3, name: 'Group 3', points: '130', assignment:'6', tasks:task3, score:tasksScore3,isDone:taskIsDone3},
 //   {id: 4, name: 'Group 4', points: '95', assignment:'3', tasks:task4, score:tasksScore4,isDone:taskIsDone4},
@@ -69,8 +73,7 @@ export default function BigDiv() {
 
   // call();
 
-
-  const handleClick = event => {
+    const handleClick = event => {
     setButtonPopup(true);
     setIsShown(current => !current);
     idNumber = parseInt(event.currentTarget.id);
@@ -78,11 +81,10 @@ export default function BigDiv() {
       id: event.currentTarget.id,
       name: event.currentTarget.name,
       points: event.currentTarget.points,
-      tasks: event.currentTarget.tasks,
-      taskScore: event.currentTarget.score,
-      isDone: event.currentTarget.isDone
-    };
+      tasks: event.currentTarget.assignmentList,
+     };
   };
+
 
   return (
     <>
@@ -90,11 +92,12 @@ export default function BigDiv() {
 
         {groupList.map((groupList) =>
         (<button onClick={handleClick} id={groupList.id} key={groupList.id}>
-          <Group
+        {console.log(groupList)}
+        <Group
             key={groupList.id}
             name={groupList.name}
             points={groupList.points}
-            assignment={groupList.assignmentList}
+            //assignment={}
             total={groupList.assignmentList.length}
           /></button>
         ))}
@@ -104,12 +107,20 @@ export default function BigDiv() {
           key={groupList[idNumber - 1]?.id}
           name={groupList[idNumber - 1]?.name}
           points={groupList[idNumber - 1]?.points}
-          task={groupList[idNumber - 1]?.tasks}
-          taskScore={groupList[idNumber - 1]?.score}
-          isDone={groupList[idNumber - 1]?.isDone}
-        />
+          tasks={groupList[idNumber - 1]?.tasks}
+          />
       </Popup>
 
     </>
   )
 }
+
+
+// <GroupDetails
+//           key={groupList[idNumber - 1]?.id}
+//           name={groupList[idNumber - 1]?.name}
+//           points={groupList[idNumber - 1]?.points}
+//           task={groupList[idNumber - 1]?.tasks}
+//           taskScore={groupList[idNumber - 1]?.score}
+//           isDone={groupList[idNumber - 1]?.isDone}
+//         />
