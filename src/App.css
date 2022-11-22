@@ -2,7 +2,8 @@ body {
   background: rgb(46,47,120);
   background: linear-gradient(180deg, rgba(46,47,120,1) 0%, rgba(67,46,123,1) 35%, rgba(98,44,129,1) 100%);  
   background-repeat: no-repeat;
-  height: 1000px;
+  margin:20px;
+  height: 1500px;
 }
 
 

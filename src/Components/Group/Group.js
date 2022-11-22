@@ -7,7 +7,7 @@ const Group = (props) => {
     const assignmentCompleted = props.assignment
     const assignmentLength = props.total;
 
-    return <div>
+    return <div className="mainDiv">
             <div id="name">{groupName}</div>
             <div id="points">{points}</div>
             <div id="assignments">{assignmentCompleted}/{assignmentLength}</div>
