@@ -12,7 +12,7 @@ const GroupForm = (props) => {
 
     const submitHandler = (event) => {
         
-        fetch('http://localhost:8081/createGroup/'+enteredName, {  
+      fetch('http://localhost:8081/createGroup/'+enteredName, {  
 
       method: 'POST', 
       mode: 'cors', 
