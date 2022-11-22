@@ -5,7 +5,7 @@ import Popup from "../Popup/Popup.js";
 import React, { useState } from 'react'
 import GroupForm from '../NewGroup/GroupForm.js';
 import AddPoints from "../AddPoints/AddPoints.js";
-import AddAssignment from "../AddAssignment/AddAssignment.js";
+import AddAssignmentForm from "../AddAssignment/AddAssignmentForm.js";
 
 
 function Header() {
@@ -29,7 +29,7 @@ return (
     </Popup>
     <button onClick={() => setButtonPopupAnotherPoint(true)} id="addAssignment" className="sideButtons"> Assignments </button>
     <Popup trigger = {buttonPopupAnotherPoint} setTrigger={setButtonPopupAnotherPoint} id={Popup}>
-      <AddAssignment />
+      <AddAssignmentForm />
     </Popup>
     <button onClick={() => setButtonPopupPoint(true)} id="addPoints" className="sideButtons"> Points </button>
     <Popup trigger = {buttonPopupPoint} setTrigger={setButtonPopupPoint} id={Popup}>
