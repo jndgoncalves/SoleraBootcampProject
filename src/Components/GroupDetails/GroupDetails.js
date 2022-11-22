@@ -8,7 +8,10 @@ const GroupDetails = (props) => {
     const taskScore = props.taskScore
     const isDone = props.isDone
     let changes;
- 
+    const handleChange = event => {
+      console.log(event.target.value)
+      console.log(event.target.checked)
+    }
 
     const listItems = tasks.map((task) =>  
     <div className="insideDiv">
@@ -19,37 +22,15 @@ const GroupDetails = (props) => {
     <div className="insideDiv">
     {score}
     </div>);
-  // const listItems3 = isDone.map((done) =>
-  //   <div className="insideDiv">
-  //     {changes = done}
-  //   <form>
-  //             <input type="checkbox" value={listItems} id="subscribe" checked={changes}></input>
-  //   </form>
-  //   </div>);
-  const listItems3 = isDone.map((done) =>{
-     changes = done;
-     
-    (() => {
-      
-      if (changes == true) {
-        console.log(changes)
-        console.log("completed!")
+  const listItems3 = isDone.map((done) =>
+    <div className="insideDiv">
+      {changes = done}
+    <form>
+              <input type="checkbox" onChange={handleChange} value={tasks} id="subscribe" defaultChecked={changes}></input>
+    </form>
+    </div>);
 
-        return (<div className="insideDiv"> Completed! </div>)
-
-      }
-
-      else{
-        console.log(changes)
-        console.log("not completed!")
-
-        return (<div className="insideDiv">Still not completed!</div>)
-
-      }
-
-    })()});
  
-
 
     return <form>
         <div className="textDiv">
@@ -57,7 +38,12 @@ const GroupDetails = (props) => {
             <div className="DetailsDiv">
             <div className="DetailsDiv__list">{listItems}</div>
             <div className="DetailsDiv__points">{listItems2}</div>
-            <div className="DetailsDiv__check"> <div className="DetailsDiv__check__DB">{listItems3}</div><div className="DetailsDiv__check__change"></div></div>
+            <div className="DetailsDiv__check"> <div className="DetailsDiv__check__DB">
+              {listItems3}
+   
+              
+              </div><div className="DetailsDiv__check__change"></div></div>
+  
             </div>
             <button type="submit">Add Assignments</button>
         </div>
@@ -65,3 +51,4 @@ const GroupDetails = (props) => {
 }
 
 export default GroupDetails;
+
