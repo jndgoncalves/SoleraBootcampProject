@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from '../Header/Header';
 import GroupDetails from '../GroupDetails/GroupDetails';
 import Group from '../Group/Group';
@@ -73,7 +73,7 @@ export default function BigDiv() {
 
   // call();
 
-    const handleClick = event => {
+  const handleClick = event => {
     setButtonPopup(true);
     setIsShown(current => !current);
     idNumber = parseInt(event.currentTarget.id);
@@ -82,7 +82,7 @@ export default function BigDiv() {
       name: event.currentTarget.name,
       points: event.currentTarget.points,
       tasks: event.currentTarget.assignmentList,
-     };
+    };
   };
 
 
@@ -92,8 +92,8 @@ export default function BigDiv() {
 
         {groupList.map((groupList) =>
         (<button onClick={handleClick} id={groupList.id} key={groupList.id}>
-        {console.log(groupList)}
-        <Group
+          {console.log(groupList)}
+          <Group
             key={groupList.id}
             name={groupList.name}
             points={groupList.points}
@@ -108,7 +108,7 @@ export default function BigDiv() {
           name={groupList[idNumber - 1]?.name}
           points={groupList[idNumber - 1]?.points}
           tasks={groupList[idNumber - 1]?.tasks}
-          />
+        />
       </Popup>
 
     </>
