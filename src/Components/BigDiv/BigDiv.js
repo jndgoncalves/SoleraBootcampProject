@@ -47,25 +47,27 @@ export default function BigDiv() {
   const [buttonPopup, setButtonPopup] = useState(false);
   const [groupList, setGroupList] = useState([]);
 
-  async function call() {
-    try {
-      //path to data.json file in public folder
-      // const response = await fetch('data.json');
-      const response = await fetch('http://localhost:8081/getAll', {
-        method: 'GET',
-        mode: 'cors',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-      const groups = await response.json();
-      setGroupList(groups);
-    } catch (error) {
-      console.log('Error with fetching data!', error);
-    }
-  }
+  useEffect(() => {
+    (async function call() {
+      try {
+        //path to data.json file in public folder
+        // const response = await fetch('data.json');
+        const response = await fetch('http://localhost:8081/getAll', {
+          method: 'GET',
+          mode: 'cors',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+        const groups = await response.json();
+        setGroupList(groups);
+      } catch (error) {
+        console.log('Error with fetching data!', error);
+      }
+    })();
+  }, []);
 
-  call();
+  // call();
 
 
   const handleClick = event => {
