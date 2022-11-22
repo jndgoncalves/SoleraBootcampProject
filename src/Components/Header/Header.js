@@ -3,7 +3,7 @@ import solera from "../../Images/solera.svg";
 import "./Header.css"
 import Popup from "../Popup/Popup.js";
 import React, { useState } from 'react'
-import NewGroup from '../NewGroup/NewGroup.js';
+import GroupForm from '../NewGroup/GroupForm.js';
 import AddPoints from "../AddPoints/AddPoints.js";
 import AddAssignment from "../AddAssignment/AddAssignment.js";
 
@@ -25,7 +25,7 @@ return (
     <div className="sideButtonsDiv">
     <button onClick={() => setButtonPopup(true)} id="addGroup" className="sideButtons" > Group </button>
     <Popup trigger = {buttonPopup} setTrigger={setButtonPopup} id={Popup}>
-      <NewGroup />
+      <GroupForm />
     </Popup>
     <button onClick={() => setButtonPopupAnotherPoint(true)} id="addAssignment" className="sideButtons"> Assignments </button>
     <Popup trigger = {buttonPopupAnotherPoint} setTrigger={setButtonPopupAnotherPoint} id={Popup}>
