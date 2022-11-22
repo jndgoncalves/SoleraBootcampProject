@@ -11,18 +11,27 @@ const GroupForm = (props) => {
  
 
     const submitHandler = (event) => {
-        event.preventDefault();
+        
+        fetch('http://localhost:8081/createGroup/'+enteredName, {  
+
+      method: 'POST', 
+      mode: 'cors', 
+     
+
+    })
+        console.log(enteredName)
 
         const groupData = {
             name: enteredName
         }
-        props.onSaveGroupData(groupData);
+       
+      
         setEnteredName('');
         
     }
 
-    return <form >
-        <div className="textDiv" onSubmit={submitHandler}>
+    return <form onSubmit={submitHandler}>
+        <div className="textDiv" >
             <h1>Insert your group name</h1><p></p>
             <label className="label">Group name: </label>
             <input type="text" min="1" required="0" onChange={nameChangeHandler} value={enteredName}></input><p></p>
