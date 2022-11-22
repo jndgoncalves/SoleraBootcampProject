@@ -4,8 +4,7 @@ const newGroup = (props) => {
 
     const saveGroupDataHandler = (enteredGroupData) => {
         const groupData = {
-            ...enteredGroupData,
-            id: Math.random().toString()
+            ...enteredGroupData
         }
         props.onAddGroup(groupData)
     }
