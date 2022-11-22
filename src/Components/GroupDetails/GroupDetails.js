@@ -2,6 +2,7 @@ import "./GroupDetails.css";
 
 const GroupDetails = (props) => {
 
+  //console.log(props)
     const groupName = props.name
     const points = props.points
     const tasks = props.task

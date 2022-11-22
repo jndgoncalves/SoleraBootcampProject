@@ -22,11 +22,11 @@ const GroupForm = (props) => {
     }
 
     return <form >
-        <div className="textDiv">
-            <div className="labelDiv">Insert your group name</div>
-            <label>Group name:</label>
+        <div className="textDiv" onSubmit={submitHandler}>
+            <h1>Insert your group name</h1><p></p>
+            <label className="label">Group name: </label>
             <input type="text" min="1" required="0" onChange={nameChangeHandler} value={enteredName}></input><p></p>
-            <button type="submit" onClick={submitHandler}>Add Group</button>
+            <button type="submit" className="Button">Add Group</button>
         </div>
     </form>
 }

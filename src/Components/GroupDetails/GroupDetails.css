@@ -18,7 +18,7 @@
     .DetailsDiv{
         display: grid;
         grid-template-columns: 213px 213px 213px;
-        background-color: rgb(125, 129, 129);
+        background-color: white;
         border-radius: 25px;
         font-size: 18pt;
         text-align: left;

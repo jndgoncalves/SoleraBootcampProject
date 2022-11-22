@@ -5,11 +5,11 @@ import Popup from "../Popup/Popup.js";
 import React, { useState } from 'react'
 import NewGroup from '../NewGroup/NewGroup.js';
 import AddPoints from "../AddPoints/AddPoints.js";
-import AddAssignment from "../AddAssignment/AddAssignment";
+import AddAssignment from "../AddAssignment/AddAssignment.js";
 
 
-function Header(){
-    
+function Header() {
+
 
     
     const [buttonPopup, setButtonPopup] = useState(false);
@@ -19,7 +19,7 @@ function Header(){
 return ( 
     <div className="headerDiv">
       <a href="http://www.localhost:3000">
-    <div className="solera"><img src={solera} alt="solera logo" height="250" width="500" className="soleraImg"></img></div>
+        <div className="solera"><img src={solera} alt="solera logo" height="250" width="500" className="soleraImg"></img></div>
       </a>
     <h1>Solera Teams Scores</h1>
     <div className="sideButtonsDiv">
@@ -38,7 +38,7 @@ return (
     </div>
   </div>);
 
-    
+
 }
 
 
