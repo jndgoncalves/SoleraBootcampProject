@@ -1,7 +1,5 @@
 import "./GroupDetails.css";
 import React, { useState } from 'react'
-import TinyPopup from '../TinyPopUp/TinyPopup';
-import { element } from "prop-types";
 
 
 
