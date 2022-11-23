@@ -1,52 +1,103 @@
 import "./GroupDetails.css";
+import React, { useState } from 'react'
+import TinyPopup from '../TinyPopUp/TinyPopup';
+import { element } from "prop-types";
+
+
+
+
 
 const GroupDetails = (props) => {
+let listName = [];
 
-  //console.log(props)
+let listPoint = [];
+
+let listDone = [];
+
+let listButton=[];
+
+
+
+
+    const [change, setChange] = useState(false);
+    const [checked, setChecked] = useState(false);
+    const groupId=props.id
     const groupName = props.name
     const points = props.points
-    const tasks = props.task
-    const taskScore = props.taskScore
-    const isDone = props.isDone
-    let changes;
-    const handleChange = event => {
-      console.log(event.target.value)
-      console.log(event.target.checked)
+    const List = props.assignment
+    //const [assigns]=props.assignment
+    // let index=0;
+
+    const handleChange = (param) => {
+      let checkboxVar = document.getElementById(param);
+      // let disBtn = document.getElementsByName(!param);
+      // disBtn.disabled = true;
+      setChange(!change);
+      checkboxVar.disabled = change;
     }
 
-    const listItems = tasks.map((task) =>  
-    <div className="insideDiv">
-    {task}
-    </div>);
+
+    const changeHandler = (id) => {
+      //let checkboxVar = document.getElementById(id); 
+      setChecked(!checked)
+      console.log(checked)
+      // setChange(change);
+      // checkboxVar.disabled = change;
+
+      const assignData = {
+        groupId: groupId,
+        assignmentId: id,
+        doneStatus: checked
+        };
+      fetch('http://localhost:8081/editAssignment', 
+       {
+             method: 'PUT',
+             mode: 'cors',
+             body: JSON.stringify(assignData),
+             headers: {
+                  'Content-Type': 'application/json',
+                }
+          });
+      setChecked(!checked);
+  }    
   
-  const listItems2 = taskScore.map((score) =>
-    <div className="insideDiv">
-    {score}
-    </div>);
-  const listItems3 = isDone.map((done) =>
-    <div className="insideDiv">
-      {changes = done}
-    <form>
-              <input type="checkbox" onChange={handleChange} value={tasks} id="subscribe" defaultChecked={changes}></input>
-    </form>
-    </div>);
+  List.forEach(element => {
+    listName.push(
+      <div className="insideDiv" key={element.id}>
+      {element.name}
+      </div>)
+    listPoint.push(
+        <div className="insideDiv" key={element.id}>
+        {element.point}
+        </div>)
+    listDone.push(      
+        <div className="insideDiv" key={element.id}>
+          <input type="checkbox" defaultChecked={element.done} value={element.done} disabled id={element.id} onChange={(event) =>changeHandler(element.id)}></input>
+        </div>)
+    listButton.push(
+      <div className="insideDiv" key={element.id}>
+          <input type="button" className="buttonCheck" onClick={(event) => handleChange(element.id)} name={element.id} value="X" ></input>
+        </div>)
+    });
 
- 
+    
 
+   
+    
+   
     return <form>
         <div className="textDiv">
           <div className="labelDiv">{groupName} has {points} Points!</div>
             <div className="DetailsDiv">
-            <div className="DetailsDiv__list">{listItems}</div>
-            <div className="DetailsDiv__points">{listItems2}</div>
-            <div className="DetailsDiv__check"> <div className="DetailsDiv__check__DB">
-              {listItems3}
-   
-              
-              </div><div className="DetailsDiv__check__change"></div></div>
-  
+            <div className="DetailsDiv__list">{listName}</div>
+            <div className="DetailsDiv__points">{listPoint}</div>
+            <div className="DetailsDiv__check">{listDone}</div>
+            <div className="DetailsDiv__button">{listButton}</div>
             </div>
-            <button type="submit">Add Assignments</button>
+            {/* <div onChange={changeHandler}>
+            <input type="radio" value="true" name="changeInput" />
+            <input type="radio" value="false" name="changeInput" />
+            </div> */}
         </div>
     </form>;
 }

@@ -16,7 +16,7 @@ const GroupForm = (props) => {
 
       method: 'POST', 
       mode: 'cors', 
-     
+    
 
     })
         console.log(enteredName)
