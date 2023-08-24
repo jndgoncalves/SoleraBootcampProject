@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import GroupDetails from '../GroupDetails/GroupDetails';
-import Group from '../Group/Group';
 import './BigDiv.css';
+import GroupDetails from '../../groups/GroupDetails/GroupDetails';
+import Group from '../../groups/Group/Group';
+import Popup from '../../popups/Popup/Popup';
 
-import Popup from '../Popup/Popup';
-
-
-let groupList = [];
 
 let idNumber;
-let groupSelected={};
+let groupSelected = {};
 
 
 export default function BigDiv() {
@@ -20,7 +17,7 @@ export default function BigDiv() {
   useEffect(() => {
     (async function call() {
       try {
-        
+
         const response = await fetch('http://localhost:8081/getAll', {
           method: 'GET',
           mode: 'cors',
@@ -36,21 +33,22 @@ export default function BigDiv() {
     })();
   }, []);
 
- 
-    
+
+
 
   const handleClick = event => {
     setButtonPopup(true);
     idNumber = parseInt(event.currentTarget.id);
     groupList.forEach(element => {
-      if(element.id == idNumber){
-          groupSelected = 
-          {
+      if (element.id === idNumber) {
+        groupSelected =
+        {
           id: element.id,
           groupName: element.name,
           points: element.points,
-          assignment: element.assignmentList};
-        }
+          assignment: element.assignmentList
+        };
+      }
     });
   };
 
@@ -60,14 +58,14 @@ export default function BigDiv() {
       <div className="BigDiv" id="BigDiv">
 
         {groupList.map((groupList) =>
-        (<button onClick={handleClick} id={groupList.id+"g"} key={groupList.id}>
-            <Group
+        (<button onClick={handleClick} id={groupList.id + "g"} key={groupList.id}>
+          <Group
             key={groupList.id}
             name={groupList.name}
             points={groupList.points}
             //assignment={}
             total={groupList.assignmentList.length}
-            
+
           /></button>
         ))}
       </div>
