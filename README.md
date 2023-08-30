@@ -1,70 +1,104 @@
-# Getting Started with Create React App
+# Solera Bootcamp Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 1. Project Overview
 
-## Available Scripts
+The Solera Bootcamp Project was developed as a part of a bootcamp training program to simulate a real-world workflow environment. Developed within a tight timeframe of just 3 days, the primary objective of the project is to register and track points earned by different groups for completing tasks. This system allows for the creation of groups, tasks, and the ability to add or subtract points, providing a comprehensive view of each group's performance.
 
-In the project directory, you can run:
+## 2. Technologies Used:
 
-### `npm start`
+The frontend of the project was developed using React, a popular JavaScript library for building user interfaces. React's component-based architecture was leveraged to create reusable UI components, enhancing the efficiency and maintainability of the code.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 3. Setup and Installation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Frontend
 
-### `npm test`
+To get the frontend up and running, follow these steps:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Prerequisites**: Ensure you have Node.js and npm (Node Package Manager) installed on your machine.
+- **Clone the Repository**:
 
-### `npm run build`
+  ```bash
+  git clone https://github.com/jndgoncalves/SoleraBootcampProjectFE.git
+  ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Navigate to the Project Directory**:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  ```bash
+  cd SoleraBootcampProjectFE
+  ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Install Dependencies**:
 
-### `npm run eject`
+  ```bash
+  npm install
+  ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Start the Development Server**:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  ```bash
+  npm start
+  ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The frontend application should now be running on [http://localhost:3000](http://localhost:3000).
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Backend
 
-## Learn More
+To see the full project in action, the backend server needs to be running. Here's a brief overview of how to set it up:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **Prerequisites**: Ensure you have Java and Maven installed on your machine.
+- **Clone the Backend Repository**:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  ```bash
+  git clone https://github.com/AndreaC-94/SoleraBootcampProject.git
+  ```
 
-### Code Splitting
+- **Navigate to the Backend Project Directory**:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+  ```bash
+  cd SoleraBootcampProject
+  ```
 
-### Analyzing the Bundle Size
+- **Build and Run the Application using Maven**:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+  ```bash
+  mvn spring-boot:run
+  ```
 
-### Making a Progressive Web App
+The backend server should now be running, and the frontend application can communicate with it to fetch and send data.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+> **Note**: While the primary focus is on the frontend, having the backend running is essential for the full functionality of the project.
 
-### Advanced Configuration
+## 3. My Role
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+While the project was a collaborative effort, my primary responsibility revolved around handling the API calls, specifically fetching data from the backend. I ensured seamless communication between the frontend and backend, making certain that data was accurately retrieved and presented to the user.
 
-### Deployment
+### Team Members:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- **Front-End**:
+  - [João Gonçalves](https://github.com/jndgoncalves)
+  - [Nuno Taquelim](https://github.com/ntaquelim)
+- **Back-End**:
+  - [Andrea Colucci](https://github.com/AndreaC-94)
+  - [Conor Fair](https://github.com/conorjfair)
 
-### `npm run build` fails to minify
+## Screenshots
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Home Page
+
+![Home Page](public/screenshots/homePage.png)
+
+### New Group
+
+![New Group](public/screenshots/newGroup.png)
+
+### Add Assignments
+
+![Add Assignments](public/screenshots/addAssignments.png)
+
+### Extra Points
+
+![Extra Points](public/screenshots/extraPoints.png)
+
+### Group Details
+
+![Group Details](public/screenshots/groupDetails.png)
